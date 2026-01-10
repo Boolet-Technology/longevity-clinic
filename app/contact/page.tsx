@@ -1,45 +1,77 @@
 'use client';
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { FadeInUp, FadeInLeft, FadeInRight } from "@/components/AnimatedSection";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { 
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import {
+  FadeInUp,
+  FadeInLeft,
+  FadeInRight,
+} from '@/components/AnimatedSection';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { toast } from "@/hooks/use-toast";
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
+} from '@/components/ui/select';
+import { toast } from '@/hooks/use-toast';
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Send,
+  CheckCircle,
+} from 'lucide-react';
 
 const nationalities = [
-  "British", "American", "Canadian", "Australian", "German", "French", 
-  "Italian", "Spanish", "Dutch", "Swiss", "Swedish", "Norwegian", 
-  "Danish", "Belgian", "Austrian", "Irish", "Portuguese", "Japanese", 
-  "Chinese", "South Korean", "Indian", "Brazilian", "Mexican", "Other"
+  'British',
+  'American',
+  'Canadian',
+  'Australian',
+  'German',
+  'French',
+  'Italian',
+  'Spanish',
+  'Dutch',
+  'Swiss',
+  'Swedish',
+  'Norwegian',
+  'Danish',
+  'Belgian',
+  'Austrian',
+  'Irish',
+  'Portuguese',
+  'Japanese',
+  'Chinese',
+  'South Korean',
+  'Indian',
+  'Brazilian',
+  'Mexican',
+  'Other',
 ];
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
+
     toast({
-      title: "Message Sent Successfully",
+      title: 'Message Sent Successfully',
       description: "We'll get back to you within 24 hours.",
     });
   };
@@ -60,9 +92,13 @@ const Contact = () => {
               Thank You!
             </h1>
             <p className="text-muted-foreground font-body mb-8">
-              Your message has been received. Our team will contact you within 24 hours.
+              Your message has been received. Our team will contact
+              you within 24 hours.
             </p>
-            <Button onClick={() => setIsSubmitted(false)} className="btn-luxury">
+            <Button
+              onClick={() => setIsSubmitted(false)}
+              className="btn-luxury"
+            >
               Send Another Message
             </Button>
           </motion.div>
@@ -73,66 +109,68 @@ const Contact = () => {
 
   return (
     <>
-      {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-primary overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-1/4 w-96 h-96 border border-accent rounded-full" />
         </div>
-        
+
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <FadeInUp className="max-w-3xl mx-auto text-center">
             <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
               Get In Touch
             </span>
             <h1 className="font-heading text-4xl md:text-6xl text-primary-foreground mt-4 mb-6 leading-tight">
-              Contact{" "}
-              <span className="text-accent italic">Us</span>
+              Contact <span className="text-accent italic">Us</span>
             </h1>
             <p className="text-primary-foreground/70 text-lg font-body leading-relaxed">
-              Have questions? We're here to help. Reach out to our team and 
-              we'll respond within 24 hours.
+              Have questions? We're here to help. Reach out to our
+              team and we'll respond within 24 hours.
             </p>
           </FadeInUp>
         </div>
       </section>
 
-      {/* Contact Section */}
       <section className="section-padding bg-background">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-            {/* Contact Info */}
             <FadeInLeft>
               <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
                 Contact Information
               </span>
               <h2 className="font-heading text-3xl md:text-4xl text-foreground mt-4 mb-8">
-                Visit Our{" "}
+                Visit Our{' '}
                 <span className="text-accent italic">Clinic</span>
               </h2>
 
               <div className="space-y-6 mb-10">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
                     <MapPin className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-lg text-foreground mb-1">Address</h3>
+                    <h3 className="font-heading text-lg text-foreground mb-1">
+                      Address
+                    </h3>
                     <p className="text-muted-foreground font-body">
-                      123 Harley Street<br />
-                      London, W1G 6AX<br />
+                      123 Harley Street
+                      <br />
+                      London, W1G 6AX
+                      <br />
                       United Kingdom
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
                     <Phone className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-lg text-foreground mb-1">Phone</h3>
-                    <a 
-                      href="tel:+44123456789" 
+                    <h3 className="font-heading text-lg text-foreground mb-1">
+                      Phone
+                    </h3>
+                    <a
+                      href="tel:+44123456789"
                       className="text-muted-foreground font-body hover:text-accent transition-colors"
                     >
                       +44 123 456 789
@@ -141,36 +179,41 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
                     <Mail className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-lg text-foreground mb-1">Email</h3>
-                    <a 
-                      href="mailto:info@uklongevity.com" 
+                    <h3 className="font-heading text-lg text-foreground mb-1">
+                      Email
+                    </h3>
+                    <a
+                      href="mailto:info@uklongevityclinic.co.uk"
                       className="text-muted-foreground font-body hover:text-accent transition-colors"
                     >
-                      info@uklongevity.com
+                      info@uklongevityclinic.co.uk
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
                     <Clock className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-lg text-foreground mb-1">Hours</h3>
+                    <h3 className="font-heading text-lg text-foreground mb-1">
+                      Hours
+                    </h3>
                     <p className="text-muted-foreground font-body">
-                      Monday - Friday: 9:00 - 18:00<br />
-                      Saturday: 10:00 - 16:00<br />
+                      Monday - Friday: 9:00 - 18:00
+                      <br />
+                      Saturday: 10:00 - 16:00
+                      <br />
                       Sunday: Closed
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Map Placeholder */}
               <div className="relative rounded-lg overflow-hidden h-64 bg-muted">
                 <img
                   src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=2050&auto=format&fit=crop"
@@ -193,7 +236,7 @@ const Contact = () => {
                 <h3 className="font-heading text-2xl text-card-foreground mb-6">
                   Send Us a Message
                 </h3>
-                
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <Label htmlFor="fullName">Full Name *</Label>
@@ -208,14 +251,19 @@ const Contact = () => {
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="nationality">Nationality *</Label>
+                      <Label htmlFor="nationality">
+                        Nationality *
+                      </Label>
                       <Select name="nationality" required>
                         <SelectTrigger className="mt-2">
                           <SelectValue placeholder="Select nationality" />
                         </SelectTrigger>
                         <SelectContent>
                           {nationalities.map((nationality) => (
-                            <SelectItem key={nationality} value={nationality.toLowerCase()}>
+                            <SelectItem
+                              key={nationality}
+                              value={nationality.toLowerCase()}
+                            >
                               {nationality}
                             </SelectItem>
                           ))}
@@ -231,9 +279,13 @@ const Contact = () => {
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="male">Male</SelectItem>
-                          <SelectItem value="female">Female</SelectItem>
+                          <SelectItem value="female">
+                            Female
+                          </SelectItem>
                           <SelectItem value="other">Other</SelectItem>
-                          <SelectItem value="prefer-not-to-say">Prefer not to say</SelectItem>
+                          <SelectItem value="prefer-not-to-say">
+                            Prefer not to say
+                          </SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -275,16 +327,32 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="btn-luxury w-full"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
                       <span className="flex items-center">
-                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        <svg
+                          className="animate-spin -ml-1 mr-3 h-5 w-5"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          ></path>
                         </svg>
                         Sending...
                       </span>

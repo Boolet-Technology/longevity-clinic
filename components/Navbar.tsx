@@ -1,17 +1,25 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, Phone } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import {
+  fadeInLeft,
+  fadeInUp,
+  fadeInRight,
+  menuSlide,
+  rollIn,
+} from '@/lib/animations';
+import Image from 'next/image';
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/contact", label: "Contact" },
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 const Navbar = () => {
@@ -24,33 +32,48 @@ const Navbar = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
-    setIsOpen(false);
+    const timer = setTimeout(() => {
+      setIsOpen(false);
+    }, 0);
+    return () => clearTimeout(timer);
   }, [pathname]);
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-primary/95 backdrop-blur-md shadow-elegant py-3"
-          : "bg-transparent py-6"
+          ? 'bg-primary/95 backdrop-blur-md shadow-elegant py-3'
+          : 'bg-transparent py-6'
       }`}
     >
       <nav className="container mx-auto px-4 md:px-8 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            variants={fadeInLeft(0, 0.6, -20)}
+            initial="hidden"
+            animate="visible"
+          >
+          <Image
+            src="/assets/UK-Longevity-logo.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="size-16 object-contain mr-4"
+          />
+          </motion.div>
+          <motion.div
+            variants={fadeInLeft(0, 0.6, -20)}
+            initial="hidden"
+            animate="visible"
           >
             <h1 className="font-heading text-xl md:text-2xl text-primary-foreground">
-              UK <span className="text-accent">Longevity</span>
+              UK <span className="text-accent">Longevity</span> Clinic
             </h1>
           </motion.div>
         </Link>
@@ -60,16 +83,21 @@ const Navbar = () => {
           {navLinks.map((link, index) => (
             <motion.div
               key={link.href}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              variants={fadeInUp(index * 0.1, 0.4, -10)} // negative y for falling down or just standard up? Original was y: -10 -> 0. My fadeInUp is y: 30 -> 0.
+              // Wait, y: -10 means it starts above and moves down.
+              // My fadeInUp starts below (positive 30) and moves up.
+              // I should probably use a custom variant or just pass -10 to fadeInUp?
+              // fadeInUp(delay, duration, y). If I pass -10, it starts at -10 and moves to 0. Correct.
+              // So it acts as fadeInDown.
+              initial="hidden"
+              animate="visible"
             >
               <Link
                 href={link.href}
-                className={`text-sm font-body tracking-wide transition-colors duration-300 hover:text-accent ${
+                className={`text-lg font-body tracking-wide transition-colors duration-300 hover:text-accent ${
                   pathname === link.href
-                    ? "text-accent"
-                    : "text-primary-foreground/80"
+                    ? 'text-accent'
+                    : 'text-primary-foreground/80'
                 }`}
               >
                 {link.label}
@@ -82,9 +110,9 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center space-x-4">
           <motion.a
             href="tel:+44123456789"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            variants={fadeInRight(0.3, 0.6, 20)}
+            initial="hidden"
+            animate="visible"
             className="flex items-center space-x-2 text-primary-foreground/80 hover:text-accent transition-colors"
           >
             <Phone size={16} />
@@ -92,9 +120,9 @@ const Navbar = () => {
           </motion.a>
 
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            variants={fadeInRight(0.4, 0.6, 20)}
+            initial="hidden"
+            animate="visible"
           >
             <Button asChild className="btn-luxury">
               <Link href="/book">Book Appointment</Link>
@@ -116,26 +144,26 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+            variants={menuSlide()}
+            initial="closed"
+            animate="open"
+            exit="exit"
             className="lg:hidden bg-primary/98 backdrop-blur-md border-t border-primary-foreground/10"
           >
             <div className="container mx-auto px-4 py-6 space-y-4">
               {navLinks.map((link, index) => (
                 <motion.div
                   key={link.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  variants={fadeInLeft(index * 0.1, 0.3, -20)}
+                  initial="hidden"
+                  animate="visible"
                 >
                   <Link
                     href={link.href}
-                    className={`block text-lg font-body py-2 transition-colors ${
+                    className={`block text-base font-body py-2 transition-colors ${
                       pathname === link.href
-                        ? "text-accent"
-                        : "text-primary-foreground/80 hover:text-accent"
+                        ? 'text-accent'
+                        : 'text-primary-foreground/80 hover:text-accent'
                     }`}
                   >
                     {link.label}
@@ -144,9 +172,9 @@ const Navbar = () => {
               ))}
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
+                variants={fadeInUp(0.4, 0.3, 20)}
+                initial="hidden"
+                animate="visible"
                 className="pt-4"
               >
                 <Button asChild className="btn-luxury w-full">

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { FadeInUp } from "@/components/AnimatedSection";
+import { carouselFade } from "@/lib/animations";
 
 const testimonials = [
   {
@@ -71,10 +72,10 @@ const TestimonialsSection = () => {
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
+                variants={carouselFade(0.5)}
+                initial="enter"
+                animate="center"
+                exit="exit"
                 className="text-center"
               >
                 <p className="text-lg md:text-xl text-card-foreground/80 font-body leading-relaxed mb-8 italic">

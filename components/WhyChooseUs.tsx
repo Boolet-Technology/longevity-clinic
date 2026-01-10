@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { FadeInLeft, FadeInRight } from "@/components/AnimatedSection";
 import { Check } from "lucide-react";
+import { scaleIn, fadeInRight, fadeInLeft } from "@/lib/animations";
 
 const features = [
   "World-renowned medical specialists",
@@ -22,10 +23,10 @@ const WhyChooseUs = () => {
           <FadeInLeft className="relative">
             <div className="relative">
               <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
+                variants={scaleIn(0, 0.8, 0.8)}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
                 className="relative z-10"
               >
                 <img
@@ -40,10 +41,10 @@ const WhyChooseUs = () => {
               
               {/* Stats card */}
               <motion.div
-                initial={{ x: 50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
+                variants={fadeInRight(0.4, 0.6, 50)} // Using fadeInRight because x: 50 typically means coming from right if positive? Wait. Existing was initial x: 50. That means it slides IN from right to 0. Correct.
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
                 className="absolute -bottom-8 -right-8 bg-accent p-6 rounded-lg shadow-lg z-20 hidden md:block"
               >
                 <span className="block text-4xl font-heading text-accent-foreground">15+</span>
@@ -72,13 +73,13 @@ const WhyChooseUs = () => {
               {features.map((feature, index) => (
                 <motion.div
                   key={feature}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  variants={fadeInRight(index * 0.1, 0.4, 20)}
+                  initial="hidden"
+                  whileInView="visible"
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="flex items-center space-x-3"
                 >
-                  <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
                     <Check className="w-4 h-4 text-accent" />
                   </div>
                   <span className="text-primary-foreground/80 text-sm font-body">

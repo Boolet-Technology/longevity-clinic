@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
+import { fadeInUp, fadeInLeft, fadeInRight, scaleIn, staggerContainer } from "@/lib/animations";
 
 interface AnimatedSectionProps {
   children: ReactNode;
@@ -10,10 +11,10 @@ interface AnimatedSectionProps {
 export const FadeInUp = ({ children, className = "", delay = 0 }: AnimatedSectionProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      variants={fadeInUp(delay, 0.8, 40)}
+      initial="hidden"
+      whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, delay, ease: [0.25, 0.1, 0.25, 1] }}
       className={className}
     >
       {children}
@@ -24,10 +25,10 @@ export const FadeInUp = ({ children, className = "", delay = 0 }: AnimatedSectio
 export const FadeInLeft = ({ children, className = "", delay = 0 }: AnimatedSectionProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, x: -40 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      variants={fadeInLeft(delay, 0.8, -40)}
+      initial="hidden"
+      whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, delay, ease: [0.25, 0.1, 0.25, 1] }}
       className={className}
     >
       {children}
@@ -38,10 +39,10 @@ export const FadeInLeft = ({ children, className = "", delay = 0 }: AnimatedSect
 export const FadeInRight = ({ children, className = "", delay = 0 }: AnimatedSectionProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, x: 40 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      variants={fadeInRight(delay, 0.8, 40)}
+      initial="hidden"
+      whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, delay, ease: [0.25, 0.1, 0.25, 1] }}
       className={className}
     >
       {children}
@@ -52,10 +53,10 @@ export const FadeInRight = ({ children, className = "", delay = 0 }: AnimatedSec
 export const ScaleIn = ({ children, className = "", delay = 0 }: AnimatedSectionProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      variants={scaleIn(delay, 0.6, 0.9)}
+      initial="hidden"
+      whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6, delay, ease: [0.25, 0.1, 0.25, 1] }}
       className={className}
     >
       {children}
@@ -66,17 +67,10 @@ export const ScaleIn = ({ children, className = "", delay = 0 }: AnimatedSection
 export const StaggerContainer = ({ children, className = "" }: { children: ReactNode; className?: string }) => {
   return (
     <motion.div
+      variants={staggerContainer}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
-      variants={{
-        hidden: {},
-        visible: {
-          transition: {
-            staggerChildren: 0.15,
-          },
-        },
-      }}
       className={className}
     >
       {children}
@@ -87,10 +81,7 @@ export const StaggerContainer = ({ children, className = "" }: { children: React
 export const StaggerItem = ({ children, className = "" }: { children: ReactNode; className?: string }) => {
   return (
     <motion.div
-      variants={{
-        hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } },
-      }}
+      variants={fadeInUp(0, 0.6, 30)}
       className={className}
     >
       {children}

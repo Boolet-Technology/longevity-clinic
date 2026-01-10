@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Linkedin, ArrowUp } from "lucide-react";
 import Link from "next/link";
+import { fadeInUp } from "@/lib/animations";
+import Image from "next/image";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -13,17 +15,25 @@ const Footer = () => {
       {/* Main Footer */}
       <div className="container mx-auto px-4 md:px-8 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+         
           {/* Brand Column */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeInUp(0, 0.6, 20)}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-2xl mb-4">
+             <Image
+            src="/assets/UK-Longevity-clinic-logo.png"
+            alt="Logo"
+            width={300}
+            height={300}
+            className="object-contain"
+          />
+            {/* <h2 className="font-heading text-2xl mb-4">
               UK <span className="text-accent">Longevity</span>
-            </h2>
-            <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6 font-body">
+            </h2> */}
+            <p className="text-primary-foreground/70 text-base leading-relaxed mb-6 font-body mt-4">
               Pioneering the future of longevity medicine with world-class 
               anti-aging and regenerative treatments tailored for discerning 
               individuals.
@@ -55,10 +65,10 @@ const Footer = () => {
 
           {/* Quick Links */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeInUp(0.1, 0.6, 20)}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
           >
             <h3 className="font-heading text-lg mb-6 text-accent">Quick Links</h3>
             <ul className="space-y-3">
@@ -72,7 +82,7 @@ const Footer = () => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-primary-foreground/70 hover:text-accent transition-colors text-sm font-body"
+                    className="text-primary-foreground/70 hover:text-accent transition-colors text-base font-body"
                   >
                     {link.label}
                   </Link>
@@ -83,10 +93,10 @@ const Footer = () => {
 
           {/* Services */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeInUp(0.2, 0.6, 20)}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="font-heading text-lg mb-6 text-accent">Services</h3>
             <ul className="space-y-3">
@@ -100,7 +110,7 @@ const Footer = () => {
                 <li key={service}>
                   <Link
                     href="/services"
-                    className="text-primary-foreground/70 hover:text-accent transition-colors text-sm font-body"
+                    className="text-primary-foreground/70 hover:text-accent transition-colors text-base font-body"
                   >
                     {service}
                   </Link>
@@ -111,41 +121,41 @@ const Footer = () => {
 
           {/* Contact Info */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeInUp(0.3, 0.6, 20)}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
           >
             <h3 className="font-heading text-lg mb-6 text-accent">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
-                <MapPin size={18} className="text-accent mt-0.5 flex-shrink-0" />
-                <span className="text-primary-foreground/70 text-sm font-body">
+                <MapPin size={18} className="text-accent mt-0.5 shrink-0" />
+                <span className="text-primary-foreground/70 text-base font-body">
                   123 Harley Street<br />
                   London, W1G 6AX
                 </span>
               </li>
               <li className="flex items-center space-x-3">
-                <Phone size={18} className="text-accent flex-shrink-0" />
+                <Phone size={18} className="text-accent shrink-0" />
                 <a
                   href="tel:+44123456789"
-                  className="text-primary-foreground/70 hover:text-accent transition-colors text-sm font-body"
+                  className="text-primary-foreground/70 hover:text-accent transition-colors text-base font-body"
                 >
                   +44 123 456 789
                 </a>
               </li>
               <li className="flex items-center space-x-3">
-                <Mail size={18} className="text-accent flex-shrink-0" />
+                <Mail size={18} className="text-accent shrink-0" />
                 <a
-                  href="mailto:info@uklongevity.com"
-                  className="text-primary-foreground/70 hover:text-accent transition-colors text-sm font-body"
+                  href="mailto:info@uklongevityclinic.co.uk"
+                  className="text-primary-foreground/70 hover:text-accent transition-colors text-base font-body"
                 >
-                  info@uklongevity.com
+                  info@uklongevityclinic.co.uk
                 </a>
               </li>
               <li className="flex items-start space-x-3">
-                <Clock size={18} className="text-accent mt-0.5 flex-shrink-0" />
-                <span className="text-primary-foreground/70 text-sm font-body">
+                <Clock size={18} className="text-accent mt-0.5 shrink-0" />
+                <span className="text-primary-foreground/70 text-base font-body">
                   Mon - Fri: 9:00 - 18:00<br />
                   Sat: 10:00 - 16:00
                 </span>
@@ -156,26 +166,38 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-primary-foreground/10">
+      <div className="border-t border-primary-foreground/10 text-sm">
         <div className="container mx-auto px-4 md:px-8 py-6 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-primary-foreground/50 text-sm font-body text-center md:text-left">
+          <p className="text-primary-foreground/50  font-body text-center md:text-left">
             © {new Date().getFullYear()} UK Longevity Clinic. All rights reserved.
           </p>
           
           <div className="flex items-center space-x-6 mt-4 md:mt-0">
             <Link
               href="/privacy"
-              className="text-primary-foreground/50 hover:text-accent text-sm transition-colors font-body"
+              className="text-primary-foreground/50 hover:text-accent transition-colors font-body"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-primary-foreground/50 hover:text-accent text-sm transition-colors font-body"
+              className="text-primary-foreground/50 hover:text-accent transition-colors font-body"
             >
               Terms of Service
             </Link>
           </div>
+
+           <p className="text-primary-foreground/50 mt-2 md:mt-0">
+              Website by{' '}
+              <a
+                href="https://boolet.co.uk"
+                className="hover:bg-[#5D12D2] hover:text-white font-medium hover:py-1 px-1 rounded  transition-all ease-in-out duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Boolet.co.uk
+              </a>
+            </p>
 
           <button
             onClick={scrollToTop}

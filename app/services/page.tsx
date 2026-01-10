@@ -9,6 +9,7 @@ import {
   Smile, Zap, Moon, Salad 
 } from "lucide-react";
 import Link from "next/link";
+import { hoverCard } from "@/lib/animations";
 
 const serviceCategories = [
   {
@@ -178,7 +179,8 @@ const Services = () => {
               {category.services.map((service) => (
                 <StaggerItem key={service.name}>
                   <motion.div
-                    whileHover={{ y: -5, boxShadow: "0 25px 50px -12px hsl(var(--primary) / 0.15)" }}
+                    variants={hoverCard()}
+                    whileHover="hover"
                     className="bg-card p-6 rounded-lg shadow-card h-full"
                   >
                     <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
