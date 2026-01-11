@@ -47,11 +47,11 @@ const Navbar = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-primary/95 backdrop-blur-md shadow-elegant py-3'
+          ? 'bg-primary/85 backdrop-blur-md shadow-elegant py-3 border-b border-primary-foreground/10'
           : 'bg-transparent py-6'
       }`}
     >
-      <nav className="container mx-auto px-4 md:px-8 flex items-center justify-between">
+      <nav className="container mx-auto px-4 md:px-8 flex items-center justify-between mb-4 md:mb-0">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <motion.div

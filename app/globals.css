@@ -165,7 +165,7 @@
 ================================ */
 @layer components {
   .btn-luxury {
-    @apply relative overflow-hidden bg-accent text-accent-foreground px-8 py-6 font-medium tracking-wide uppercase text-sm;
+    @apply relative overflow-hidden bg-accent text-accent-foreground px-8 py-6 font-medium tracking-wide uppercase text-sm border border-accent/40;
     @apply transition-all duration-500 ease-out hover:shadow-lg hover:-translate-y-0.5;
   }
 

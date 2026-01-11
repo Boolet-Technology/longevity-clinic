@@ -11,7 +11,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-primary text-primary-foreground border-t border-primary-foreground/10">
       {/* Main Footer */}
       <div className="container mx-auto px-4 md:px-8 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -23,22 +23,24 @@ const Footer = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-             <Image
+            <div className="flex items-center justify-center md:justify-start md:items-start md:block">
+               <Image
             src="/assets/UK-Longevity-clinic-logo.png"
             alt="Logo"
             width={300}
             height={300}
             className="object-contain"
           />
+            </div>
             {/* <h2 className="font-heading text-2xl mb-4">
               UK <span className="text-accent">Longevity</span>
             </h2> */}
-            <p className="text-primary-foreground/70 text-base leading-relaxed mb-6 font-body mt-4">
+            <p className="text-primary-foreground/70 text-base leading-relaxed mb-6 font-body mt-4 text-center md:text-left">
               Pioneering the future of longevity medicine with world-class 
               anti-aging and regenerative treatments tailored for discerning 
               individuals.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 text-center justify-center md:justify-start md:text-left">
               <a
                 href="#"
                 className="w-10 h-10 rounded-full border border-primary-foreground/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-all duration-300"
@@ -201,7 +203,7 @@ const Footer = () => {
 
           <button
             onClick={scrollToTop}
-            className="hidden md:flex items-center justify-center w-10 h-10 rounded-full border border-primary-foreground/20 hover:bg-accent hover:border-accent transition-all duration-300 mt-4 md:mt-0"
+            className="hidden md:flex items-center justify-center w-10 h-10 rounded-full border border-primary-foreground/20 hover:bg-accent hover:border-accent transition-all duration-300 mt-4 md:mt-0 hover:cursor-pointer"
             aria-label="Scroll to top"
           >
             <ArrowUp size={18} />
