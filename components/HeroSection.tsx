@@ -19,7 +19,7 @@ const HeroSection = () => {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   return (
-    <section ref={containerRef} className="relative min-h-screen flex flex-col md:justify-center overflow-hidden">
+    <section ref={containerRef} className="relative flex flex-col md:justify-center overflow-hidden">
         {/* Parallax Background */}
       <motion.div style={{ y }} className="absolute inset-0 z-0 select-none">
         <motion.div 
@@ -114,7 +114,7 @@ const HeroSection = () => {
         variants={fadeInUp(1, 0.8, 50)}
         initial="hidden"
         animate="visible"
-        className="relative md:absolute bottom-0 left-0 right-0 bg-linear-to-t from-primary to-transparent"
+        className="relative bottom-0 left-0 right-0 bg-linear-to-t from-primary to-transparent"
       >
         <div className="container mx-auto px-4 md:px-8 py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-primary-foreground/10 pt-8 max-md:bg-primary/95 max-md:backdrop-blur-sm max-md:rounded-t-2xl max-md:border-t-0 max-md:pb-12 max-md:gap-y-6">

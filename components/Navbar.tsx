@@ -51,7 +51,7 @@ const Navbar = () => {
           : 'bg-transparent py-6'
       }`}
     >
-      <nav className="container mx-auto px-4 md:px-8 flex items-center justify-between mb-4 md:mb-0">
+      <nav className="container mx-auto flex items-center justify-between mb-4 md:mb-0">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <motion.div
