@@ -86,7 +86,7 @@ const HeroSection = () => {
                 custom={1}
                 className="font-heading text-4xl md:text-6xl lg:text-7xl text-accent italic leading-tight"
               >
-                Art of Longevity
+                Art of Longevity Testing
               </motion.h1>
             </div>
           </motion.div>
