@@ -5,7 +5,12 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { fadeInUp, revealText, staggerContainer, imageScale } from '@/lib/animations';
+import {
+  fadeInUp,
+  revealText,
+  staggerContainer,
+  imageScale,
+} from '@/lib/animations';
 import Image from 'next/image';
 import { stats } from '@/data/data';
 
@@ -13,28 +18,34 @@ const HeroSection = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end start"]
+    offset: ['start start', 'end start'],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
 
   return (
-    <section ref={containerRef} className="relative flex flex-col md:justify-center overflow-hidden">
-        {/* Parallax Background */}
-      <motion.div style={{ y }} className="absolute inset-0 z-0 select-none">
-        <motion.div 
-            variants={imageScale}
-            initial="hidden"
-            animate="visible"
-            className="relative w-full h-full"
+    <section
+      ref={containerRef}
+      className="relative flex flex-col md:justify-center overflow-hidden"
+    >
+      {/* Parallax Background */}
+      <motion.div
+        style={{ y }}
+        className="absolute inset-0 z-0 select-none"
+      >
+        <motion.div
+          variants={imageScale}
+          initial="hidden"
+          animate="visible"
+          className="relative w-full h-full"
         >
-            <Image
+          <Image
             src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auhref=format&fit=crop"
             alt="Luxury medical facility"
             fill
             className="w-full h-full object-cover"
             priority
-            />
+          />
         </motion.div>
         <div className="absolute inset-0 bg-linear-to-r from-primary/95 via-primary/80 to-primary/60" />
         <div className="absolute inset-0 bg-linear-to-t from-primary via-transparent to-transparent" />
@@ -54,22 +65,30 @@ const HeroSection = () => {
             </span>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
             className="mb-6 overflow-hidden"
           >
-              <div className="overflow-hidden">
-                <motion.h1 variants={revealText} custom={0} className="font-heading text-4xl md:text-6xl lg:text-7xl text-primary-foreground leading-tight">
-                    Redefining the
-                </motion.h1>
-              </div>
-              <div className="overflow-hidden">
-                <motion.h1 variants={revealText} custom={1} className="font-heading text-4xl md:text-6xl lg:text-7xl text-accent italic leading-tight">
-                    Art of Longevity
-                </motion.h1>
-              </div>
+            <div className="overflow-hidden">
+              <motion.h1
+                variants={revealText}
+                custom={0}
+                className="font-heading text-4xl md:text-6xl lg:text-7xl text-primary-foreground leading-tight"
+              >
+                Redefining the
+              </motion.h1>
+            </div>
+            <div className="overflow-hidden">
+              <motion.h1
+                variants={revealText}
+                custom={1}
+                className="font-heading text-4xl md:text-6xl lg:text-7xl text-accent italic leading-tight"
+              >
+                Art of Longevity Test
+              </motion.h1>
+            </div>
           </motion.div>
 
           <motion.p
