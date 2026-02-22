@@ -48,14 +48,6 @@ export const metadata: Metadata = {
       'UK Longevity Clinic | Science-Backed Anti-Aging & Wellness',
     description:
       'Advanced diagnostics and personalized longevity protocols. Where science meets luxury.',
-    images: [
-      {
-        url: '/opengraph-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'UK Longevity Clinic',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -63,7 +55,6 @@ export const metadata: Metadata = {
       'UK Longevity Clinic | Science-Backed Anti-Aging & Wellness',
     description:
       'Advanced diagnostics and personalized longevity protocols. Where science meets luxury.',
-    images: ['/opengraph-image.jpg'],
   },
 
   robots: {
