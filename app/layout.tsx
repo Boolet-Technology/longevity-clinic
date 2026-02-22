@@ -17,7 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 const baseUrl =
-  process.env.NEXT_PUBLIC_BASE_URL || 'https://uklongevityclinic.com';
+  process.env.NEXT_PUBLIC_BASE_URL ||
+  'https://uklongevityclinic.co.uk';
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -64,6 +65,7 @@ export const metadata: Metadata = {
       'Advanced diagnostics and personalized longevity protocols. Where science meets luxury.',
     images: ['/opengraph-image.jpg'],
   },
+
   robots: {
     index: true,
     follow: true,
