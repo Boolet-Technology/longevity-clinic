@@ -1,9 +1,15 @@
+import type { Metadata } from 'next';
+import HeroSection from '@/components/HeroSection';
+import ServicesSection from '@/components/ServicesSection';
+import WhyChooseUs from '@/components/WhyChooseUs';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import CTASection from '@/components/CTASection';
 
-import HeroSection from "@/components/HeroSection";
-import ServicesSection from "@/components/ServicesSection";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import CTASection from "@/components/CTASection";
+export const metadata: Metadata = {
+  title: 'UK Longevity Clinic | Science-Backed Anti-Aging & Wellness',
+  description:
+    'Experience the future of health at UK Longevity Clinic. We combine advanced diagnostic testing with personalized longevity protocols to optimize your healthspan.',
+};
 
 export default function Home() {
   return (

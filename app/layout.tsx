@@ -1,24 +1,80 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
+import './globals.css';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
-import SmoothScroll from "@/components/SmoothScroll";
+import SmoothScroll from '@/components/SmoothScroll';
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 });
 
+const baseUrl =
+  process.env.NEXT_PUBLIC_BASE_URL || 'https://uklongevityclinic.com';
+
 export const metadata: Metadata = {
-  title: "UK Longevity Clinic",
-  description: "UK Longevity Clinic - The UK's premier longevity clinic. Where science meets luxury.",
+  metadataBase: new URL(baseUrl),
+  title: {
+    default:
+      'UK Longevity Clinic | Science-Backed Anti-Aging & Wellness',
+    template: '%s | UK Longevity Clinic',
+  },
+  description:
+    "UK Longevity Clinic - The UK's premier longevity clinic. Where science meets luxury. Advanced diagnostics and personalized longevity protocols.",
+  keywords: [
+    'Longevity',
+    'Anti-aging',
+    'Wellness Clinic',
+    'UK Health',
+    'Biohacking',
+    'Precision Medicine',
+  ],
+  authors: [{ name: 'UK Longevity Clinic' }],
+  creator: 'UK Longevity Clinic',
+  openGraph: {
+    type: 'website',
+    locale: 'en_GB',
+    url: baseUrl,
+    siteName: 'UK Longevity Clinic',
+    title:
+      'UK Longevity Clinic | Science-Backed Anti-Aging & Wellness',
+    description:
+      'Advanced diagnostics and personalized longevity protocols. Where science meets luxury.',
+    images: [
+      {
+        url: '/opengraph-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'UK Longevity Clinic',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title:
+      'UK Longevity Clinic | Science-Backed Anti-Aging & Wellness',
+    description:
+      'Advanced diagnostics and personalized longevity protocols. Where science meets luxury.',
+    images: ['/opengraph-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -33,9 +89,7 @@ export default function RootLayout({
       >
         <SmoothScroll />
         <Navbar />
-        <main className="flex-1">
-        {children}
-        </main>
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>
