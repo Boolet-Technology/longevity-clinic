@@ -7,6 +7,8 @@ export const metadata: Metadata = {
     'Schedule your consultation with the UK Longevity Clinic. Take the first step towards a longer, healthier, and more vibrant life with our personalized longevity protocols.',
 };
 
+import { redirect } from 'next/navigation';
+
 export default function BookPage() {
-  return <BookClient />;
+  redirect('/contact');
 }

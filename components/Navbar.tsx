@@ -53,7 +53,7 @@ const Navbar = () => {
     >
       <nav className="container mx-auto flex items-center justify-between mb-4 md:mb-0">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-2 ml-4">
           <motion.div
             variants={fadeInLeft(0, 0.6, -20)}
             initial="hidden"
@@ -177,9 +177,9 @@ const Navbar = () => {
                 animate="visible"
                 className="pt-4"
               >
-                <Button asChild className="btn-luxury w-full">
+                {/* <Button asChild className="btn-luxury w-full">
                   <Link href="/book">Book Appointment</Link>
-                </Button>
+                </Button> */}
               </motion.div>
             </div>
           </motion.div>

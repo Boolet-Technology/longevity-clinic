@@ -88,7 +88,7 @@ const Footer = () => {
                 { label: 'Home', href: '/' },
                 { label: 'About Us', href: '/about' },
                 { label: 'Our Services', href: '/services' },
-                { label: 'Book Appointment', href: '/book' },
+                // { label: 'Book Appointment', href: '/book' },
                 { label: 'Contact', href: '/contact' },
               ].map((link) => (
                 <li key={link.href}>

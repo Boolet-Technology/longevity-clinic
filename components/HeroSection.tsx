@@ -108,12 +108,12 @@ const HeroSection = () => {
             animate="visible"
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Button asChild className="btn-luxury group">
+            {/* <Button asChild className="btn-luxury group">
               <Link href="/book" className="h-auto">
                 Book Consultation
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </Button>
+            </Button> */}
 
             <Button
               asChild

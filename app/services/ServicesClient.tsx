@@ -211,12 +211,12 @@ const ServicesClient = () => {
                 <p className="text-muted-foreground font-body leading-relaxed mb-6">
                   {category.description}
                 </p>
-                <Button asChild className="btn-luxury">
+                {/* <Button asChild className="btn-luxury">
                   <Link href="/book">
                     Book Consultation
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Link>
-                </Button>
+                </Button> */}
               </FadeInUp>
             </div>
 
@@ -263,12 +263,12 @@ const ServicesClient = () => {
               Schedule a consultation with our specialists to create
               your personalized treatment plan.
             </p>
-            <Button asChild className="btn-luxury">
+            {/* <Button asChild className="btn-luxury">
               <Link href="/book">
                 Book Your Consultation
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
-            </Button>
+            </Button> */}
           </FadeInUp>
         </div>
       </section>

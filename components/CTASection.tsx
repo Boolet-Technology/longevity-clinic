@@ -1,26 +1,32 @@
 'use client';
 
-import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
-import { ArrowRight, Calendar } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { fadeInUp, imageScale } from "@/lib/animations";
-import Image from "next/image";
+import Link from 'next/link';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+import { ArrowRight, Calendar } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { fadeInUp, imageScale } from '@/lib/animations';
+import Image from 'next/image';
 
 const CTASection = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"]
+    offset: ['start end', 'end start'],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["-25%", "25%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ['-25%', '25%']);
 
   return (
-    <section ref={containerRef} className="relative py-24 md:py-32 overflow-hidden">
+    <section
+      ref={containerRef}
+      className="relative py-24 md:py-32 overflow-hidden"
+    >
       <div className="absolute inset-0 z-0">
-        <motion.div style={{ y }} className="relative w-full h-[150%] -top-[25%]">
+        <motion.div
+          style={{ y }}
+          className="relative w-full h-[150%] -top-[25%]"
+        >
           <Image
             src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auhref=format&fit=crop"
             alt="Luxury clinic"
@@ -74,8 +80,9 @@ const CTASection = () => {
             viewport={{ once: true }}
             className="text-primary-foreground/70 text-lg md:text-xl font-body leading-relaxed mb-10"
           >
-            Schedule your exclusive consultation with our specialists and discover 
-            a personalized path to optimal health and longevity.
+            Schedule your exclusive consultation with our specialists
+            and discover a personalized path to optimal health and
+            longevity.
           </motion.p>
 
           <motion.div
@@ -85,22 +92,20 @@ const CTASection = () => {
             viewport={{ once: true }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button asChild className="btn-luxury group">
+            {/* <Button asChild className="btn-luxury group">
               <Link href="/book" className="h-auto">
                 <Calendar className="mr-2 w-5 h-5" />
                 Book Your Consultation
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </Button>
-            
+            </Button> */}
+
             <Button
               asChild
               variant="ghost"
               className="border-2 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground px-8 py-6"
             >
-              <Link href="/contact">
-                Contact Us
-              </Link>
+              <Link href="/contact">Contact Us</Link>
             </Button>
           </motion.div>
 
@@ -111,7 +116,8 @@ const CTASection = () => {
             viewport={{ once: true }}
             className="text-primary-foreground/50 text-base font-body mt-8"
           >
-            Complimentary initial consultation • Personalized treatment plans • Flexible scheduling
+            Complimentary initial consultation • Personalized
+            treatment plans • Flexible scheduling
           </motion.p>
         </div>
       </div>
