@@ -61,7 +61,7 @@ const HeroSection = () => {
             animate="visible"
           >
             <span className="inline-block text-accent text-sm tracking-[0.3em] uppercase mb-6 font-body">
-              Welcome to Excellence
+              The Science of Longer Life
             </span>
           </motion.div>
 
@@ -77,7 +77,7 @@ const HeroSection = () => {
                 custom={0}
                 className="font-heading text-4xl md:text-6xl lg:text-7xl text-primary-foreground leading-tight"
               >
-                Redefining the
+                The Future of
               </motion.h1>
             </div>
             <div className="overflow-hidden">
@@ -86,7 +86,7 @@ const HeroSection = () => {
                 custom={1}
                 className="font-heading text-4xl md:text-6xl lg:text-7xl text-accent italic leading-tight"
               >
-                Art of Longevity Testing
+                Human Longevity
               </motion.h1>
             </div>
           </motion.div>
