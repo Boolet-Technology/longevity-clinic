@@ -59,13 +59,13 @@ const Navbar = () => {
             initial="hidden"
             animate="visible"
           >
-          <Image
-            src="/assets/UK-Longevity-logo.png"
-            alt="Logo"
-            width={100}
-            height={100}
-            className="size-16 object-contain mr-4"
-          />
+            <Image
+              src="/assets/UK-Longevity-logo.png"
+              alt="Logo"
+              width={100}
+              height={100}
+              className="size-16 object-contain mr-4"
+            />
           </motion.div>
           <motion.div
             variants={fadeInLeft(0, 0.6, -20)}
@@ -109,17 +109,17 @@ const Navbar = () => {
         {/* CTA Buttons */}
         <div className="hidden lg:flex items-center space-x-4">
           <motion.a
-            href="tel:+44123456789"
+            href="tel:02037730111"
             variants={fadeInRight(0.3, 0.6, 20)}
             initial="hidden"
             animate="visible"
             className="flex items-center space-x-2 text-primary-foreground/80 hover:text-accent transition-colors"
           >
             <Phone size={16} />
-            <span className="text-sm font-body">+44 123 456 789</span>
+            <span className="text-sm font-body">020 3773 0111</span>
           </motion.a>
 
-          <motion.div
+          {/* <motion.div
             variants={fadeInRight(0.4, 0.6, 20)}
             initial="hidden"
             animate="visible"
@@ -127,7 +127,7 @@ const Navbar = () => {
             <Button asChild className="btn-luxury">
               <Link href="/book">Book Appointment</Link>
             </Button>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Mobile Menu Button */}

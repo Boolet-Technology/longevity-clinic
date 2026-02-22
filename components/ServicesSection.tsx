@@ -22,17 +22,16 @@ const ServicesSection = () => {
             Our Expertise
           </span>
           <h2 className="font-heading text-3xl md:text-5xl text-foreground mt-4 mb-6">
-            Exceptional Care,{' '}
+            Personalised Care,{' '}
             <span className="text-accent italic">
-              Exceptional Results
+              Personalised Results
             </span>
           </h2>
           <div className="divider-gold mb-6" />
 
           <p className="text-muted-foreground font-body leading-relaxed">
             We offer a comprehensive suite of longevity services
-            designed to help you live longer, healthier, and more
-            vibrantly.
+            designed to help you live healthier, and more vibrantly.
           </p>
         </FadeInUp>
 
@@ -44,7 +43,7 @@ const ServicesSection = () => {
                 transition={{ duration: 0.3 }}
                 className="group bg-card rounded-lg overflow-hidden shadow-card hover:shadow-elegant transition-all duration-500"
               >
-                <motion.div 
+                <motion.div
                   className="relative h-64 overflow-hidden"
                   variants={revealImage}
                 >

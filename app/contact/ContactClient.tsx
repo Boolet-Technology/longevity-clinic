@@ -28,33 +28,6 @@ import {
   CheckCircle,
 } from 'lucide-react';
 
-const nationalities = [
-  'British',
-  'American',
-  'Canadian',
-  'Australian',
-  'German',
-  'French',
-  'Italian',
-  'Spanish',
-  'Dutch',
-  'Swiss',
-  'Swedish',
-  'Norwegian',
-  'Danish',
-  'Belgian',
-  'Austrian',
-  'Irish',
-  'Portuguese',
-  'Japanese',
-  'Chinese',
-  'South Korean',
-  'Indian',
-  'Brazilian',
-  'Mexican',
-  'Other',
-];
-
 const ContactClient = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -149,14 +122,27 @@ const ContactClient = () => {
                   </div>
                   <div>
                     <h3 className="font-heading text-lg text-foreground mb-1">
-                      Address
+                      North Harrow
                     </h3>
                     <p className="text-muted-foreground font-body">
-                      123 Harley Street
+                      62 Station Road
+                      <br />
+                      North Harrow, HA2 7SJ
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                    <MapPin className="w-6 h-6 text-accent" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading text-lg text-foreground mb-1">
+                      Harley Street
+                    </h3>
+                    <p className="text-muted-foreground font-body">
+                      1 Harley Street
                       <br />
                       London, W1G 6AX
-                      <br />
-                      United Kingdom
                     </p>
                   </div>
                 </div>
@@ -170,10 +156,10 @@ const ContactClient = () => {
                       Phone
                     </h3>
                     <a
-                      href="tel:+44123456789"
+                      href="tel:02037730111"
                       className="text-muted-foreground font-body hover:text-accent transition-colors"
                     >
-                      +44 123 456 789
+                      020 3773 0111
                     </a>
                   </div>
                 </div>
@@ -222,8 +208,8 @@ const ContactClient = () => {
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="bg-card/90 backdrop-blur-sm px-6 py-4 rounded-lg">
-                    <p className="text-foreground font-body text-sm">
-                      📍 123 Harley Street, London
+                    <p className="text-foreground font-body text-sm text-center">
+                      📍 Harley Street & North Harrow
                     </p>
                   </div>
                 </div>
@@ -251,24 +237,14 @@ const ContactClient = () => {
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="nationality">
-                        Nationality *
-                      </Label>
-                      <Select name="nationality" required>
-                        <SelectTrigger className="mt-2">
-                          <SelectValue placeholder="Select nationality" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {nationalities.map((nationality) => (
-                            <SelectItem
-                              key={nationality}
-                              value={nationality.toLowerCase()}
-                            >
-                              {nationality}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
+                      <Label htmlFor="age">Age *</Label>
+                      <Input
+                        id="age"
+                        name="age"
+                        placeholder="Enter your age"
+                        required
+                        className="mt-2"
+                      />
                     </div>
 
                     <div>
