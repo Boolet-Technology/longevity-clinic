@@ -23,8 +23,7 @@ const baseUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default:
-      'UK Longevity Clinic | Science-Backed Anti-Aging & Wellness',
+    default: 'UK Longevity Clinic | The Science of a Healthier Life',
     template: '%s | UK Longevity Clinic',
   },
   description:
@@ -44,15 +43,13 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     url: baseUrl,
     siteName: 'UK Longevity Clinic',
-    title:
-      'UK Longevity Clinic | Science-Backed Anti-Aging & Wellness',
+    title: 'UK Longevity Clinic | The Science of a Healthier Life',
     description:
       'Advanced diagnostics and personalized longevity protocols. Where science meets luxury.',
   },
   twitter: {
     card: 'summary_large_image',
-    title:
-      'UK Longevity Clinic | Science-Backed Anti-Aging & Wellness',
+    title: 'UK Longevity Clinic | The Science of a Healthier Life',
     description:
       'Advanced diagnostics and personalized longevity protocols. Where science meets luxury.',
   },

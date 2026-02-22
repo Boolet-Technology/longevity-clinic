@@ -6,7 +6,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import CTASection from '@/components/CTASection';
 
 export const metadata: Metadata = {
-  title: 'UK Longevity Clinic | Science-Backed Anti-Aging & Wellness',
+  title: 'UK Longevity Clinic | The Science of a Healthier Life',
   description:
     'Experience the future of health at UK Longevity Clinic. We combine advanced diagnostic testing with personalized longevity protocols to optimize your healthspan.',
 };

@@ -61,7 +61,7 @@ const HeroSection = () => {
             animate="visible"
           >
             <span className="inline-block text-accent text-sm tracking-[0.3em] uppercase mb-6 font-body">
-              The Science of Longer Life
+              The Science of a Healthier Life
             </span>
           </motion.div>
 
