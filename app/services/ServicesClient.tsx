@@ -154,8 +154,7 @@ const ServicesClient = () => {
               </span>
             </h1>
             <p className="text-primary-foreground/70 text-lg font-body leading-relaxed">
-              Discover our comprehensive suite of treatments designed
-              to help you live longer, healthier, and more vibrantly.
+              DiscoverWe offer advanced health assessments, personalised wellness programmes, and evidence-informed therapies designed to support metabolic health, immune resilience, and long-term wellbeing.
             </p>
           </FadeInUp>
         </div>
@@ -269,6 +268,12 @@ const ServicesClient = () => {
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button> */}
+             <Button asChild className="btn-luxury">
+              <Link href="/contact">
+                Contact Us
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+            </Button>
           </FadeInUp>
         </div>
       </section>

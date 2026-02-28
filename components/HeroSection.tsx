@@ -97,9 +97,7 @@ const HeroSection = () => {
             animate="visible"
             className="text-primary-foreground/70 text-lg md:text-xl max-w-xl mb-10 font-body leading-relaxed"
           >
-            Experience world-class anti-aging and regenerative
-            medicine at the UK's premier longevity clinic. Where
-            science meets luxury.
+            The UK Longevity Clinic provides personalised, preventative health optimisation services informed by advances in genomics, epigenetics, functional medicine, and integrative healthcare. Our approach focuses on supporting overall wellbeing, resilience, and healthy ageing through data-led insights and lifestyle-focused interventions.
           </motion.p>
 
           <motion.div

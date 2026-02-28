@@ -44,9 +44,7 @@ const Footer = () => {
               UK <span className="text-accent">Longevity</span>
             </h2> */}
             <p className="text-primary-foreground/70 text-base leading-relaxed mb-6 font-body mt-4 text-center md:text-left">
-              Pioneering the future of longevity medicine with
-              world-class anti-aging and regenerative treatments
-              tailored for discerning individuals.
+            UK Longevity Clinic services are focused on health optimisation and wellbeing support. They do not replace advice, diagnosis, or treatment provided by your GP or qualified medical practitioner.
             </p>
             <div className="flex space-x-4 text-center justify-center md:justify-start md:text-left">
               <a
