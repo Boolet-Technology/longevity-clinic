@@ -154,7 +154,24 @@ const ServicesClient = () => {
               </span>
             </h1>
             <p className="text-primary-foreground/70 text-lg font-body leading-relaxed">
-              DiscoverWe offer advanced health assessments, personalised wellness programmes, and evidence-informed therapies designed to support metabolic health, immune resilience, and long-term wellbeing.
+              We offer advanced health assessments, personalised wellness programmes, and evidence-informed therapies designed to support metabolic health, immune resilience, and long-term wellbeing.
+            </p>
+          </FadeInUp>
+        </div>
+      </section>
+
+      {/* Regulatory / Important information */}
+      <section className="section-padding bg-muted">
+        <div className="container mx-auto max-w-3xl">
+          <FadeInUp className="space-y-6">
+            <h2 className="font-heading text-xl md:text-2xl text-foreground">
+              Important information
+            </h2>
+            <p className="text-muted-foreground font-body leading-relaxed">
+              All IV nutritional therapies and wellness interventions are delivered following appropriate clinical screening and are intended to support general wellbeing. Individual responses may vary.
+            </p>
+            <p className="text-muted-foreground font-body leading-relaxed">
+              Epigenetic and genomic insights are used to inform personalised lifestyle and wellbeing strategies. These tests are not diagnostic and are not intended to replace medical advice from your GP or specialist.
             </p>
           </FadeInUp>
         </div>
