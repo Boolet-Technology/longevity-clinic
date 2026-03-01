@@ -30,8 +30,7 @@ const ServicesSection = () => {
           <div className="divider-gold mb-6" />
 
           <p className="text-muted-foreground font-body leading-relaxed">
-            We offer a comprehensive suite of longevity services
-            designed to help you live healthier, and more vibrantly.
+            We offer advanced health assessments, personalised wellness programmes, and evidence-informed therapies designed to support metabolic health, immune resilience, and long-term wellbeing.
           </p>
         </FadeInUp>
 

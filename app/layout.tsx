@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: '%s | UK Longevity Clinic',
   },
   description:
-    "UK Longevity Clinic - The UK's premier longevity clinic. Where science meets luxury. Advanced diagnostics and personalized longevity protocols.",
+    'Science-led health optimisation for longer, stronger, healthier living.',
   keywords: [
     'Longevity',
     'Anti-aging',
@@ -45,13 +45,13 @@ export const metadata: Metadata = {
     siteName: 'UK Longevity Clinic',
     title: 'UK Longevity Clinic | The Science of a Healthier Life',
     description:
-      'Advanced diagnostics and personalized longevity protocols. Where science meets luxury.',
+      'Science-led health optimisation for longer, stronger, healthier living.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'UK Longevity Clinic | The Science of a Healthier Life',
     description:
-      'Advanced diagnostics and personalized longevity protocols. Where science meets luxury.',
+      'Science-led health optimisation for longer, stronger, healthier living.',
   },
 
   robots: {

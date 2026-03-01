@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   FadeInUp,
   FadeInLeft,
@@ -15,6 +16,8 @@ import {
   Heart,
   Star,
   Shield,
+  ChevronDown,
+  ChevronUp,
 } from 'lucide-react';
 
 const values = [
@@ -40,32 +43,32 @@ const values = [
 
 const team = [
   {
-    name: 'Dr. Elizabeth Harrington',
-    role: 'Medical Director',
-    specialty: 'Regenerative Medicine',
+    name: 'Prof. Dr O. Uğur Sezerman',
+    specialty: 'Genomics • Epigenetics • Bioinformatics • Precision Medicine',
     image:
-      'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2070&auto=format&fit=crop',
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Crect fill='%239ca3af' width='400' height='500'/%3E%3Cg fill='%236b7280' opacity='0.9'%3E%3Crect x='120' y='140' width='160' height='140' rx='8' fill='none' stroke='%236b7280' stroke-width='10'/%3E%3Ccircle cx='160' cy='200' r='30'/%3E%3Cpath d='M100 310 L155 250 L210 290 L270 220 L300 260 L300 310 Z'/%3E%3C/g%3E%3C/svg%3E",
+    bio: "Prof. Dr O. Uğur Sezerman is Professor and Head of Biostatistics and Medical Informatics at Acıbadem Mehmet Ali Aydınlar University, Istanbul. A pioneer in computational biology and precision medicine, he established Turkey's first bioinformatics undergraduate and graduate programmes and has led internationally recognised research in multi-omics data integration, functional genomics, and personalised healthcare. His work spans genomic and epigenetic analysis to help translate complex biological data into predictive, data-driven health insights. Through the UK Longevity Clinic alliance, Prof. Sezerman provides scientific leadership supporting a new generation of personalised, preventative health strategies.",
   },
   {
-    name: 'Dr. James Whitmore',
-    role: 'Lead Physician',
-    specialty: 'Anti-Aging Medicine',
+    name: 'Dr Jawahar Mohammad',
+    specialty: 'Integrative Medicine • Metabolic Health • Preventative Care',
     image:
-      'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2070&auto=format&fit=crop',
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Crect fill='%239ca3af' width='400' height='500'/%3E%3Cg fill='%236b7280' opacity='0.9'%3E%3Crect x='120' y='140' width='160' height='140' rx='8' fill='none' stroke='%236b7280' stroke-width='10'/%3E%3Ccircle cx='160' cy='200' r='30'/%3E%3Cpath d='M100 310 L155 250 L210 290 L270 220 L300 260 L300 310 Z'/%3E%3C/g%3E%3C/svg%3E",
+    bio: "Dr Jawahar Mohammad is an experienced clinician focused on integrative and preventative approaches to metabolic and whole-system health. His work centres on identifying root drivers of imbalance and supporting patients through evidence-informed, personalised care strategies. Within the UK Longevity Clinic alliance, Dr Mohammad contributes clinical insight that bridges traditional medicine with emerging longevity science, supporting programmes designed to enhance resilience, vitality, and long-term wellbeing.",
   },
   {
-    name: 'Dr. Sophia Chen',
-    role: 'Aesthetic Director',
-    specialty: 'Aesthetic Medicine',
+    name: 'Taz Khan MBE',
+    specialty: 'Social Impact • Community Health • Systems Innovation',
     image:
-      'https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1974&auto=format&fit=crop',
+      '/assets/Taz-Khan.jpeg',
+    bio: "Mumtaz (Taz) Khan MBE is an award-winning social entrepreneur and founder of London's Community Kitchen. Widely recognised for his leadership at the intersection of food systems, public health, and community innovation, he has dedicated his career to improving health outcomes at scale. At the UK Longevity Clinic, Taz brings the critical people-place-planet perspective — ensuring that advanced longevity science is delivered in ways that are accessible, community-rooted, and designed for meaningful real-world impact.",
   },
   {
-    name: 'Dr. Michael Reynolds',
-    role: 'Senior Consultant',
-    specialty: 'Preventive Health',
+    name: 'Füsun Suman',
+    specialty: 'Functional Medicine • Biohacking Therapies • IV Nutritional Science',
     image:
-      'https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=2070&auto=format&fit=crop',
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Crect fill='%239ca3af' width='400' height='500'/%3E%3Cg fill='%236b7280' opacity='0.9'%3E%3Crect x='120' y='140' width='160' height='140' rx='8' fill='none' stroke='%236b7280' stroke-width='10'/%3E%3Ccircle cx='160' cy='200' r='30'/%3E%3Cpath d='M100 310 L155 250 L210 290 L270 220 L300 260 L300 310 Z'/%3E%3C/g%3E%3C/svg%3E",
+    bio: "Füsun Suman is a Düsseldorf-based practitioner specialising in functional medicine, personalised wellness protocols, and advanced IV nutritional therapies. Her clinical focus is on supporting cellular health, immune resilience, and whole-body optimisation through tailored, preventative approaches. Through the UK Longevity Clinic alliance, Füsun contributes frontline therapeutic expertise, helping translate evolving longevity science into practical wellbeing strategies for clients in the UK and internationally.",
   },
 ];
 
@@ -91,6 +94,8 @@ const milestones = [
 ];
 
 const AboutClient = () => {
+  const [expandedBio, setExpandedBio] = useState<string | null>(null);
+
   return (
     <>
       {/* Hero Section */}
@@ -242,8 +247,11 @@ const AboutClient = () => {
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member) => (
               <StaggerItem key={member.name}>
-                <motion.div whileHover={{ y: -10 }} className="group">
-                  <div className="relative overflow-hidden rounded-lg mb-4">
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  className="group bg-card rounded-lg overflow-hidden shadow-card"
+                >
+                  <div className="relative overflow-hidden rounded-t-lg">
                     <img
                       src={member.image}
                       alt={member.name}
@@ -251,15 +259,46 @@ const AboutClient = () => {
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  <h3 className="font-heading text-lg text-foreground">
-                    {member.name}
-                  </h3>
-                  <p className="text-accent text-sm font-body">
-                    {member.role}
-                  </p>
-                  <p className="text-muted-foreground text-sm font-body">
-                    {member.specialty}
-                  </p>
+                  <div className="p-4">
+                    <h3 className="font-heading text-lg text-foreground">
+                      {member.name}
+                    </h3>
+                    <p className="text-accent text-sm font-body mt-1">
+                      {member.specialty}
+                    </p>
+                    <AnimatePresence>
+                      {expandedBio === member.name ? (
+                        <motion.p
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="text-muted-foreground text-sm font-body leading-relaxed mt-3 overflow-hidden"
+                        >
+                          {member.bio}
+                        </motion.p>
+                      ) : null}
+                    </AnimatePresence>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setExpandedBio(
+                          expandedBio === member.name ? null : member.name
+                        )
+                      }
+                      className="text-accent text-sm font-body mt-2 flex items-center gap-1 hover:underline focus:outline-none focus:underline"
+                    >
+                      {expandedBio === member.name ? (
+                        <>
+                          Read less <ChevronUp className="w-4 h-4" />
+                        </>
+                      ) : (
+                        <>
+                          Read more <ChevronDown className="w-4 h-4" />
+                        </>
+                      )}
+                    </button>
+                  </div>
                 </motion.div>
               </StaggerItem>
             ))}
