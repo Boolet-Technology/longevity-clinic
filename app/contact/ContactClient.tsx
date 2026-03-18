@@ -148,7 +148,7 @@ const ContactClient = () => {
               Get In Touch
             </span>
             <h1 className="font-heading text-4xl md:text-6xl text-primary-foreground mt-4 mb-6 leading-tight">
-              Contact <span className="text-accent italic">Us</span>
+              Contact <span className="text-accent italic">Us.</span>
             </h1>
             <p className="text-primary-foreground/70 text-lg font-body leading-relaxed">
               Have questions? We're here to help. Reach out to our
