@@ -31,22 +31,77 @@ import {
 const ContactClient = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [gender, setGender] = useState('');
 
   const handleSubmit = async (
     e: React.FormEvent<HTMLFormElement>,
   ) => {
     e.preventDefault();
+    if (!gender) {
+      toast({
+        title: 'Please select gender',
+        description: 'Gender is required to submit the form.',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    const form = e.currentTarget;
+    const fullName = (
+      form.elements.namedItem('fullName') as HTMLInputElement
+    ).value;
+    const age = (form.elements.namedItem('age') as HTMLInputElement).value;
+    const email = (form.elements.namedItem('email') as HTMLInputElement)
+      .value;
+    const phone = (form.elements.namedItem('phone') as HTMLInputElement)
+      .value;
+    const message = (
+      form.elements.namedItem('message') as HTMLTextAreaElement
+    ).value;
+
     setIsSubmitting(true);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName,
+          age,
+          gender,
+          email,
+          phone,
+          message,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
 
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+      if (!res.ok) {
+        throw new Error(
+          typeof data.error === 'string'
+            ? data.error
+            : 'Something went wrong. Please try again.',
+        );
+      }
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-
-    toast({
-      title: 'Message Sent Successfully',
-      description: "We'll get back to you within 24 hours.",
-    });
+      setIsSubmitted(true);
+      toast({
+        title: 'Message sent successfully',
+        description: "We'll get back to you within 24 hours.",
+      });
+      form.reset();
+      setGender('');
+    } catch (err) {
+      toast({
+        title: 'Could not send message',
+        description:
+          err instanceof Error
+            ? err.message
+            : 'Please try again or email us directly.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -249,8 +304,12 @@ const ContactClient = () => {
 
                     <div>
                       <Label htmlFor="gender">Gender *</Label>
-                      <Select name="gender" required>
-                        <SelectTrigger className="mt-2">
+                      <Select
+                        value={gender}
+                        onValueChange={setGender}
+                        required
+                      >
+                        <SelectTrigger id="gender" className="mt-2">
                           <SelectValue placeholder="Select gender" />
                         </SelectTrigger>
                         <SelectContent>
