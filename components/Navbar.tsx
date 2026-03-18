@@ -61,7 +61,7 @@ const Navbar = () => {
           >
             <Image
               src="/assets/UK-Longevity-logo.png"
-              alt="Logo"
+              alt="UK Longevity Clinic logo"
               width={100}
               height={100}
               className="size-16 object-contain mr-4"

@@ -34,7 +34,7 @@ const Footer = () => {
             <div className="flex items-center justify-center md:justify-start md:items-start md:block">
               <Image
                 src="/assets/UK-Longevity-clinic-logo.png"
-                alt="Logo"
+                alt="UK Longevity Clinic logo"
                 width={300}
                 height={300}
                 className="object-contain"

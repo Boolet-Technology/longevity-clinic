@@ -29,7 +29,7 @@ const CTASection = () => {
         >
           <Image
             src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auhref=format&fit=crop"
-            alt="Luxury clinic"
+            alt="Longevity clinic in London offering advanced medical treatments"
             fill
             className="w-full h-full object-cover"
           />

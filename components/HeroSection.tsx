@@ -41,7 +41,7 @@ const HeroSection = () => {
         >
           <Image
             src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auhref=format&fit=crop"
-            alt="Luxury medical facility"
+            alt="Longevity clinic in London offering advanced medical treatments"
             fill
             className="w-full h-full object-cover"
             priority
@@ -90,6 +90,10 @@ const HeroSection = () => {
               </motion.h1>
             </div>
           </motion.div>
+
+          <span className="sr-only">
+            Longevity clinic London offering IV therapy, anti-aging treatments, and health optimisation services
+          </span> 
 
           <motion.p
             variants={fadeInUp(0.6, 0.8)}

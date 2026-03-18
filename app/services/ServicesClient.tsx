@@ -33,6 +33,7 @@ const serviceCategories = [
       'Cutting-edge treatments designed to reverse the biological clock and restore youthful vitality at the cellular level.',
     image:
       'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2070&auto=format&fit=crop',
+    alt: 'Anti-aging & regenerative - Longevity clinic in London offering advanced medical treatments',
     services: [
       {
         icon: Dna,
@@ -68,6 +69,7 @@ const serviceCategories = [
       'Refined aesthetic procedures that enhance your natural beauty using the most advanced techniques and technologies.',
     image:
       'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop',
+    alt: 'Aesthetic treatments - Longevity clinic in London offering advanced medical treatments',
     services: [
       {
         icon: Smile,
@@ -103,6 +105,7 @@ const serviceCategories = [
       'Comprehensive programs designed to optimize your health and prevent age-related decline before it begins.',
     image:
       'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2070&auto=format&fit=crop',
+    alt: 'Lifestyle & prevention - Longevity clinic in London offering advanced medical treatments',
     services: [
       {
         icon: Salad,
@@ -195,7 +198,7 @@ const ServicesClient = () => {
                 <div className="relative">
                   <img
                     src={category.image}
-                    alt={category.title}
+                    alt={category.alt}
                     className="w-full rounded-lg shadow-elegant"
                   />
                   <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent/30 rounded-lg -z-10" />

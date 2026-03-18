@@ -48,7 +48,7 @@ const ServicesSection = () => {
                 >
                   <Image
                     src={service.image}
-                    alt={service.title}
+                    alt={`${service.title} - Longevity clinic in London offering advanced medical treatments`}
                     fill
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                   />
