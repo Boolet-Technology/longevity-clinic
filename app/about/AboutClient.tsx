@@ -63,13 +63,6 @@ const team = [
       '/assets/Taz-Khan.jpeg',
     bio: "Mumtaz (Taz) Khan MBE is an award-winning social entrepreneur and founder of London's Community Kitchen. Widely recognised for his leadership at the intersection of food systems, public health, and community innovation, he has dedicated his career to improving health outcomes at scale. At the UK Longevity Clinic, Taz brings the critical people-place-planet perspective — ensuring that advanced longevity science is delivered in ways that are accessible, community-rooted, and designed for meaningful real-world impact.",
   },
-  {
-    name: 'Füsun Suman',
-    specialty: 'Functional Medicine • Biohacking Therapies • IV Nutritional Science',
-    image:
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Crect fill='%239ca3af' width='400' height='500'/%3E%3Cg fill='%236b7280' opacity='0.9'%3E%3Crect x='120' y='140' width='160' height='140' rx='8' fill='none' stroke='%236b7280' stroke-width='10'/%3E%3Ccircle cx='160' cy='200' r='30'/%3E%3Cpath d='M100 310 L155 250 L210 290 L270 220 L300 260 L300 310 Z'/%3E%3C/g%3E%3C/svg%3E",
-    bio: "Füsun Suman is a Düsseldorf-based practitioner specialising in functional medicine, personalised wellness protocols, and advanced IV nutritional therapies. Her clinical focus is on supporting cellular health, immune resilience, and whole-body optimisation through tailored, preventative approaches. Through the UK Longevity Clinic alliance, Füsun contributes frontline therapeutic expertise, helping translate evolving longevity science into practical wellbeing strategies for clients in the UK and internationally.",
-  },
 ];
 
 const milestones = [
@@ -114,10 +107,12 @@ const AboutClient = () => {
               Pioneering the Future of{' '}
               <span className="text-accent italic">Longevity</span>
             </h1>
+            <p className="text-primary-foreground/50 md:text-2xl text-xl font-body leading-relaxed mb-4">
+              We are entering a new chapter in personalised healthcare.
+            </p>
             <p className="text-primary-foreground/70 text-lg font-body leading-relaxed">
-              For over 15 years, UK Longevity Clinic has been at the
-              forefront of anti-aging medicine, helping discerning
-              clients achieve optimal health and vitality.
+              Across the world, longevity is shifting towards proactive, science-led care - and we are bringing that approach to you,
+              focusing on prevention, early insight, and personalised medicine to help you live with greater vitality, clarity, and longevity.
             </p>
           </FadeInUp>
         </div>
@@ -178,7 +173,6 @@ const AboutClient = () => {
 
               <div className="grid grid-cols-3 gap-6 mt-8">
                 {[
-                  { icon: Award, value: '15+', label: 'Years' },
                   { icon: Users, value: '5000+', label: 'Clients' },
                   { icon: Clock, value: '24/7', label: 'Support' },
                 ].map((stat) => (
@@ -253,7 +247,7 @@ const AboutClient = () => {
             </p>
           </FadeInUp>
 
-          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member) => (
               <StaggerItem key={member.name}>
                 <motion.div
@@ -316,7 +310,7 @@ const AboutClient = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="section-padding bg-primary">
+      {/* <section className="section-padding bg-primary">
         <div className="container mx-auto">
           <FadeInUp className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
@@ -355,7 +349,7 @@ const AboutClient = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

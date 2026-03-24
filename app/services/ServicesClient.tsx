@@ -27,12 +27,12 @@ import { hoverCard } from '@/lib/animations';
 const serviceCategories = [
   {
     id: 'anti-aging',
-    icon: Sparkles,
+    icon: Dna,
     title: 'Anti-Aging & Regenerative',
     description:
       'Cutting-edge treatments designed to reverse the biological clock and restore youthful vitality at the cellular level.',
     image:
-      'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2070&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1637929476734-bd7f5f78e40a?q=80&w=2070&auto=format&fit=crop',
     alt: 'Anti-aging & regenerative - Longevity clinic in London offering advanced medical treatments',
     services: [
       {

@@ -1,7 +1,6 @@
-import { Sparkles, Heart, Leaf } from "lucide-react";
+import { Heart, Leaf, Dna } from "lucide-react";
 
 export const stats = [
-    { value: '15+', label: 'Years Experience' },
     { value: '5000+', label: 'Clients Treated' },
     { value: '98%', label: 'Satisfaction Rate' },
     { value: '50+', label: 'Expert Specialists' },
@@ -10,7 +9,7 @@ export const stats = [
 
 export const services = [
     {
-        icon: Sparkles,
+        icon: Dna,
         title: "Anti-Aging & Regenerative",
         description: "Cutting-edge treatments that reverse the signs of aging at a cellular level. Stem cell therapies, NAD+ infusions, and personalized regenerative protocols.",
         image: "https://images.unsplash.com/photo-1728727267814-792db55ce678?q=80&w=2070&auhref=format&fit=crop",

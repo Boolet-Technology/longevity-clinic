@@ -50,11 +50,8 @@ const WhyChooseUs = () => {
                 viewport={{ once: true }}
                 className="absolute -bottom-8 -right-8 bg-accent p-6 rounded-lg shadow-lg z-20 hidden md:block"
               >
-                <span className="block text-4xl font-heading text-accent-foreground">
-                  15+
-                </span>
                 <span className="text-accent-foreground/80 text-sm font-body">
-                  Years of Excellence
+                A Legacy of Medical Excellence
                 </span>
               </motion.div>
             </div>
