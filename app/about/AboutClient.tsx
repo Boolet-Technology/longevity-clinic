@@ -149,21 +149,30 @@ const AboutClient = () => {
               </h2>
               <div className="space-y-4 text-muted-foreground font-body leading-relaxed">
                 <p>
-                  Founded in 2009 on London's prestigious Harley
-                  Street, UK Longevity Clinic was born from a vision
-                  to revolutionize how we approach aging and wellness.
+                  With a combined legacy of over four decades in
+                  advanced medical practice across the globe, the team
+                  behind UK Longevity Clinic brings together some of
+                  the most experienced minds in preventative and
+                  regenerative healthcare.
                 </p>
                 <p>
-                  Our founders, world-renowned physicians in
-                  regenerative medicine, recognized that true
-                  longevity isn't just about adding years to life—
-                  it's about adding life to years.
+                  Now established in London, we are introducing a new
+                  standard of personalised, science-led healthcare to
+                  the UK—one that moves beyond reactive medicine and
+                  into precision-based longevity.
                 </p>
                 <p>
-                  Today, we continue to push the boundaries of medical
-                  science, combining cutting-edge research with
-                  personalized care to help our clients live longer,
-                  healthier, and more vibrant lives.
+                  Our approach is rooted in clinical evidence,
+                  data-driven diagnostics, and tailored interventions
+                  designed to optimise health at every stage of life.
+                  This is not wellness as a trend—this is medicine
+                  redefined.
+                </p>
+                <p>
+                  At UK Longevity Clinic, we focus not simply on
+                  extending lifespan, but on elevating
+                  healthspan—enhancing energy, resilience, and
+                  long-term vitality through deeply personalised care.
                 </p>
               </div>
 

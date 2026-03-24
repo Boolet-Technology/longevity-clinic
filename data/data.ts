@@ -13,7 +13,7 @@ export const services = [
         icon: Sparkles,
         title: "Anti-Aging & Regenerative",
         description: "Cutting-edge treatments that reverse the signs of aging at a cellular level. Stem cell therapies, NAD+ infusions, and personalized regenerative protocols.",
-        image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2070&auhref=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1728727267814-792db55ce678?q=80&w=2070&auhref=format&fit=crop",
         link: "/services#anti-aging",
     },
     {
