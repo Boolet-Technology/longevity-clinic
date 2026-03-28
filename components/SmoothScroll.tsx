@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import Lenis from 'lenis';
+import { setLenisInstance } from '@/lib/lenis-instance';
 
 const SmoothScroll = () => {
   useEffect(() => {
@@ -14,6 +15,8 @@ const SmoothScroll = () => {
         wheelMultiplier: 1.2, // Slightly more responsive
     });
 
+    setLenisInstance(lenis);
+
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -22,6 +25,7 @@ const SmoothScroll = () => {
     requestAnimationFrame(raf);
 
     return () => {
+      setLenisInstance(null);
       lenis.destroy();
     };
   }, []);

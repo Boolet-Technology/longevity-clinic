@@ -14,6 +14,7 @@ import {
   rollIn,
 } from '@/lib/animations';
 import Image from 'next/image';
+import { scrollToTop } from '@/lib/lenis-instance';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -26,6 +27,14 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+
+  const handleHomeOrScrollTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    setIsOpen(false);
+    if (pathname === '/') {
+      e.preventDefault();
+      scrollToTop();
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +62,11 @@ const Navbar = () => {
     >
       <nav className="container mx-auto flex items-center justify-between mb-4 md:mb-0">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2 ml-4">
+        <Link
+          href="/"
+          onClick={handleHomeOrScrollTop}
+          className="flex items-center space-x-2 ml-4"
+        >
           <motion.div
             variants={fadeInLeft(0, 0.6, -20)}
             initial="hidden"
@@ -94,6 +107,9 @@ const Navbar = () => {
             >
               <Link
                 href={link.href}
+                onClick={
+                  link.href === '/' ? handleHomeOrScrollTop : undefined
+                }
                 className={`text-lg font-body tracking-wide transition-colors duration-300 hover:text-accent ${
                   pathname === link.href
                     ? 'text-accent'
@@ -160,6 +176,9 @@ const Navbar = () => {
                 >
                   <Link
                     href={link.href}
+                    onClick={
+                      link.href === '/' ? handleHomeOrScrollTop : undefined
+                    }
                     className={`block text-base font-body py-2 transition-colors ${
                       pathname === link.href
                         ? 'text-accent'
