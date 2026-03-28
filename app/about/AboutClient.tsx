@@ -45,15 +45,14 @@ const team = [
   {
     name: 'Prof. Dr O. Uğur Sezerman',
     specialty: 'Genomics • Epigenetics • Bioinformatics • Precision Medicine',
-    image:
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Crect fill='%239ca3af' width='400' height='500'/%3E%3Cg fill='%236b7280' opacity='0.9'%3E%3Crect x='120' y='140' width='160' height='140' rx='8' fill='none' stroke='%236b7280' stroke-width='10'/%3E%3Ccircle cx='160' cy='200' r='30'/%3E%3Cpath d='M100 310 L155 250 L210 290 L270 220 L300 260 L300 310 Z'/%3E%3C/g%3E%3C/svg%3E",
+    image:"/assets/Dr-O.Uğur-Sezerman.jpeg",
     bio: "Prof. Dr O. Uğur Sezerman is Professor and Head of Biostatistics and Medical Informatics at Acıbadem Mehmet Ali Aydınlar University, Istanbul. A pioneer in computational biology and precision medicine, he established Turkey's first bioinformatics undergraduate and graduate programmes and has led internationally recognised research in multi-omics data integration, functional genomics, and personalised healthcare. His work spans genomic and epigenetic analysis to help translate complex biological data into predictive, data-driven health insights. Through the UK Longevity Clinic alliance, Prof. Sezerman provides scientific leadership supporting a new generation of personalised, preventative health strategies.",
   },
   {
     name: 'Dr Jawahar Mohammad',
     specialty: 'Integrative Medicine • Metabolic Health • Preventative Care',
     image:
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Crect fill='%239ca3af' width='400' height='500'/%3E%3Cg fill='%236b7280' opacity='0.9'%3E%3Crect x='120' y='140' width='160' height='140' rx='8' fill='none' stroke='%236b7280' stroke-width='10'/%3E%3Ccircle cx='160' cy='200' r='30'/%3E%3Cpath d='M100 310 L155 250 L210 290 L270 220 L300 260 L300 310 Z'/%3E%3C/g%3E%3C/svg%3E",
+      "/assets/Dr.-Jawahir.jpg",
     bio: "Dr Jawahar Mohammad is an experienced clinician focused on integrative and preventative approaches to metabolic and whole-system health. His work centres on identifying root drivers of imbalance and supporting patients through evidence-informed, personalised care strategies. Within the UK Longevity Clinic alliance, Dr Mohammad contributes clinical insight that bridges traditional medicine with emerging longevity science, supporting programmes designed to enhance resilience, vitality, and long-term wellbeing.",
   },
   {
@@ -258,7 +257,7 @@ const AboutClient = () => {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full aspect-3/4 object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="w-full h-52 sm:h-56 md:h-auto aspect-3/4 object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>

@@ -34,16 +34,16 @@ const ServicesSection = () => {
           </p>
         </FadeInUp>
 
-        <StaggerContainer className="grid md:grid-cols-3 gap-8">
+        <StaggerContainer className="grid sm:grid-cols-2 xl:grid-cols-4 gap-8 items-stretch">
           {services.map((service) => (
-            <StaggerItem key={service.title}>
+            <StaggerItem key={service.title} className="h-full">
               <motion.div
                 whileHover={{ y: -10 }}
                 transition={{ duration: 0.3 }}
-                className="group bg-card rounded-lg overflow-hidden shadow-card hover:shadow-elegant transition-all duration-500"
+                className="group bg-card rounded-lg overflow-hidden shadow-card hover:shadow-elegant transition-all duration-500 h-full flex flex-col"
               >
                 <motion.div
-                  className="relative h-64 overflow-hidden"
+                  className="relative h-64 shrink-0 overflow-hidden"
                   variants={revealImage}
                 >
                   <Image
@@ -60,16 +60,16 @@ const ServicesSection = () => {
                   </div>
                 </motion.div>
 
-                <div className="p-6">
-                  <h3 className="font-heading text-xl text-card-foreground mb-3">
+                <div className="p-6 flex flex-col flex-1 min-h-0">
+                  <h3 className="font-heading text-xl text-card-foreground mb-3 leading-snug">
                     {service.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm font-body leading-relaxed mb-4">
+                  <p className="text-muted-foreground text-sm font-body leading-relaxed flex-1">
                     {service.description}
                   </p>
                   <Link
                     href={service.link}
-                    className="inline-flex items-center text-accent text-sm font-medium hover:gap-3 gap-2 transition-all"
+                    className="inline-flex items-center text-accent text-sm font-medium hover:gap-3 gap-2 transition-all shrink-0 mt-4 pt-1"
                   >
                     Learn More
                     <ArrowRight className="w-4 h-4" />

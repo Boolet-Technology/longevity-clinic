@@ -1,4 +1,4 @@
-import { Heart, Leaf, Dna } from "lucide-react";
+import { Heart, Leaf, Dna, Brain } from "lucide-react";
 
 export const stats = [
     { value: '5000+', label: 'Clients Treated' },
@@ -8,6 +8,14 @@ export const stats = [
 
 
 export const services = [
+    {
+        icon: Brain,
+        title: "Epigenetics & Longevity Intelligence",
+        description:
+            "Understand your biology. Redefine your future. Move beyond surface-level health with epigenetic testing, biological age insights, and truly personalised longevity strategies.",
+        image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2070&auto=format&fit=crop",
+        link: "/services#epigenetics",
+    },
     {
         icon: Dna,
         title: "Anti-Aging & Regenerative",

@@ -11,12 +11,40 @@ import {
   ArrowUp,
 } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { fadeInUp } from '@/lib/animations';
 import Image from 'next/image';
 
+const footerServices = [
+  {
+    label: 'Epigenetics & Longevity Intelligence',
+    id: 'epigenetics',
+  },
+  {
+    label: 'Anti-Aging & Regenerative',
+    id: 'anti-aging',
+  },
+  { label: 'Aesthetic Treatments', id: 'aesthetic' },
+  { label: 'Lifestyle & Prevention', id: 'lifestyle' },
+] as const;
+
 const Footer = () => {
+  const pathname = usePathname();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleServiceNav = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
+    if (pathname === '/services') {
+      e.preventDefault();
+      document
+        .getElementById(sectionId)
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   return (
@@ -112,19 +140,14 @@ const Footer = () => {
               Services
             </h3>
             <ul className="space-y-3">
-              {[
-                'Anti-Aging Medicine',
-                'Regenerative Therapies',
-                'Aesthetic Treatments',
-                'Lifestyle Optimization',
-                'Preventive Care',
-              ].map((service) => (
-                <li key={service}>
+              {footerServices.map((service) => (
+                <li key={service.id}>
                   <Link
-                    href="/services"
+                    href={`/services#${service.id}`}
+                    onClick={(e) => handleServiceNav(e, service.id)}
                     className="text-primary-foreground/70 hover:text-accent transition-colors text-base font-body"
                   >
-                    {service}
+                    {service.label}
                   </Link>
                 </li>
               ))}

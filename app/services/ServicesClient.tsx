@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {
   FadeInUp,
@@ -20,13 +21,59 @@ import {
   Zap,
   Moon,
   Salad,
+  TrendingUp,
+  ScanEye,
 } from 'lucide-react';
 import Link from 'next/link';
 import { hoverCard } from '@/lib/animations';
 
 const serviceCategories = [
   {
+    id: 'epigenetics',
+    eyebrow: 'Science',
+    icon: Dna,
+    title: 'Epigenetics & Longevity Intelligence',
+    description:
+      'Understand your biology. Redefine your future. Move beyond surface-level health.',
+    bodyParagraphs: [
+      'Our Epigenetics Testing service provides a deep, real-time understanding of how your lifestyle, environment, and behaviours are influencing your genes — allowing us to design truly personalised longevity strategies.',
+      'This is where science meets precision living.',
+      'Unlike traditional health checks, this is not about reacting to illness — it’s about staying ahead of it.',
+      'Best suited for: Individuals seeking clarity, performance optimisation, and long-term health control.',
+    ],
+    image:
+      'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2070&auto=format&fit=crop',
+    alt: 'Epigenetics and longevity intelligence - UK Longevity Clinic London',
+    services: [
+      {
+        icon: Dna,
+        name: 'Epigenetic testing & biological age',
+        description:
+          'Advanced epigenetic testing and biological age analysis to map how your biology is responding to life today.',
+      },
+      {
+        icon: TrendingUp,
+        name: 'Longevity & performance insights',
+        description:
+          'Personalised longevity and performance insights grounded in your unique epigenetic profile.',
+      },
+      {
+        icon: ScanEye,
+        name: 'Early imbalance detection',
+        description:
+          'Early detection of imbalance before symptoms appear, so interventions can be proactive, not reactive.',
+      },
+      {
+        icon: Salad,
+        name: 'Tailored lifestyle protocols',
+        description:
+          'Tailored nutrition, lifestyle, and recovery protocols aligned with your data and goals.',
+      },
+    ],
+  },
+  {
     id: 'anti-aging',
+    eyebrow: 'Regeneration',
     icon: Dna,
     title: 'Anti-Aging & Regenerative',
     description:
@@ -63,6 +110,7 @@ const serviceCategories = [
   },
   {
     id: 'aesthetic',
+    eyebrow: 'Beauty',
     icon: Heart,
     title: 'Aesthetic Treatments',
     description:
@@ -99,6 +147,7 @@ const serviceCategories = [
   },
   {
     id: 'lifestyle',
+    eyebrow: 'Wellness',
     icon: Leaf,
     title: 'Lifestyle & Prevention',
     description:
@@ -136,6 +185,20 @@ const serviceCategories = [
 ];
 
 const ServicesClient = () => {
+  useEffect(() => {
+    const id = window.location.hash.replace(/^#/, '');
+    if (!id) return;
+    const scrollToId = () => {
+      document.getElementById(id)?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    };
+    requestAnimationFrame(() => {
+      setTimeout(scrollToId, 150);
+    });
+  }, []);
+
   return (
     <>
       {/* Hero Section */}
@@ -185,7 +248,7 @@ const ServicesClient = () => {
         <section
           key={category.id}
           id={category.id}
-          className={`section-padding ${categoryIndex % 2 === 0 ? 'bg-background' : 'bg-muted'}`}
+          className={`section-padding scroll-mt-28 md:scroll-mt-32 ${categoryIndex % 2 === 0 ? 'bg-background' : 'bg-muted'}`}
         >
           <div className="container mx-auto">
             {/* Category Header */}
@@ -215,11 +278,7 @@ const ServicesClient = () => {
                 }
               >
                 <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
-                  {categoryIndex === 0
-                    ? 'Regeneration'
-                    : categoryIndex === 1
-                      ? 'Beauty'
-                      : 'Wellness'}
+                  {category.eyebrow}
                 </span>
                 <h2 className="font-heading text-3xl md:text-4xl text-foreground mt-4 mb-6">
                   {category.title.split(' ')[0]}{' '}
@@ -227,9 +286,12 @@ const ServicesClient = () => {
                     {category.title.split(' ').slice(1).join(' ')}
                   </span>
                 </h2>
-                <p className="text-muted-foreground font-body leading-relaxed mb-6">
-                  {category.description}
-                </p>
+                <div className="text-muted-foreground font-body leading-relaxed mb-6 space-y-4">
+                  <p>{category.description}</p>
+                  {category.bodyParagraphs?.map((para, i) => (
+                    <p key={i}>{para}</p>
+                  ))}
+                </div>
                 {/* <Button asChild className="btn-luxury">
                   <Link href="/book">
                     Book Consultation
