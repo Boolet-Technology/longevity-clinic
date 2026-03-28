@@ -2,9 +2,18 @@ import type { Metadata } from 'next';
 import ServicesClient from './ServicesClient';
 
 export const metadata: Metadata = {
-  title: 'Premium Longevity Services',
+  title: 'Longevity Services in London',
   description:
-    'Explore our range of advanced longevity treatments, including stem cell therapy, NAD+ infusions, and personalized hormone optimization.',
+    'Explore UK Longevity Clinic services in London, including epigenetics, preventative health optimisation, and personalised longevity care programmes.',
+  keywords: [
+    'longevity services london',
+    'longevity clinic london services',
+    'healthy longevity clinic uk',
+    'longevity care clinic',
+  ],
+  alternates: {
+    canonical: '/services',
+  },
 };
 
 export default function ServicesPage() {

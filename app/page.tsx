@@ -6,9 +6,20 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import CTASection from '@/components/CTASection';
 
 export const metadata: Metadata = {
-  title: 'UK Longevity Clinic | The Science of a Healthier Life',
+  title: 'Longevity Clinic London | UK Longevity Clinic',
   description:
-  'Leading longevity clinic in London offering IV therapy, advanced diagnostics, and personalised anti-aging treatments. Book your consultation today.',
+    'UK Longevity Clinic is a leading longevity clinic in London, UK offering preventative medicine, diagnostics, and personalised healthy ageing programmes.',
+  keywords: [
+    'uk longevity clinic',
+    'longevity clinic london',
+    'london longevity clinic',
+    'human longevity clinic london',
+    'longevity clinic uk',
+    'longevity wellness clinic',
+  ],
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function Home() {
