@@ -49,18 +49,18 @@ const team = [
     bio: "Prof. Dr O. Uğur Sezerman is Professor and Head of Biostatistics and Medical Informatics at Acıbadem Mehmet Ali Aydınlar University, Istanbul. A pioneer in computational biology and precision medicine, he established Turkey's first bioinformatics undergraduate and graduate programmes and has led internationally recognised research in multi-omics data integration, functional genomics, and personalised healthcare. His work spans genomic and epigenetic analysis to help translate complex biological data into predictive, data-driven health insights. Through the UK Longevity Clinic alliance, Prof. Sezerman provides scientific leadership supporting a new generation of personalised, preventative health strategies.",
   },
   {
-    name: 'Dr Jawahar Mohammad',
-    specialty: 'Integrative Medicine • Metabolic Health • Preventative Care',
-    image:
-      "/assets/Dr.-Jawahir.jpg",
-    bio: "Dr Jawahar Mohammad is an experienced clinician focused on integrative and preventative approaches to metabolic and whole-system health. His work centres on identifying root drivers of imbalance and supporting patients through evidence-informed, personalised care strategies. Within the UK Longevity Clinic alliance, Dr Mohammad contributes clinical insight that bridges traditional medicine with emerging longevity science, supporting programmes designed to enhance resilience, vitality, and long-term wellbeing.",
-  },
-  {
     name: 'Taz Khan MBE',
     specialty: 'Social Impact • Community Health • Systems Innovation',
     image:
       '/assets/Taz-Khan.jpeg',
     bio: "Mumtaz (Taz) Khan MBE is an award-winning social entrepreneur and founder of London's Community Kitchen. Widely recognised for his leadership at the intersection of food systems, public health, and community innovation, he has dedicated his career to improving health outcomes at scale. At the UK Longevity Clinic, Taz brings the critical people-place-planet perspective — ensuring that advanced longevity science is delivered in ways that are accessible, community-rooted, and designed for meaningful real-world impact.",
+  },
+  {
+    name: 'Dr Jawahar Mohammad',
+    specialty: 'Integrative Medicine • Metabolic Health • Preventative Care',
+    image:
+      "/assets/Dr.-Jawahir.jpg",
+    bio: "Dr Jawahar Mohammad is an experienced clinician focused on integrative and preventative approaches to metabolic and whole-system health. His work centres on identifying root drivers of imbalance and supporting patients through evidence-informed, personalised care strategies. Within the UK Longevity Clinic alliance, Dr Mohammad contributes clinical insight that bridges traditional medicine with emerging longevity science, supporting programmes designed to enhance resilience, vitality, and long-term wellbeing.",
   },
 ];
 
