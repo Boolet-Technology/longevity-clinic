@@ -13,6 +13,7 @@ import {
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { fadeInUp } from '@/lib/animations';
+import { FoldInTitle } from '@/components/AnimatedSection';
 import Image from 'next/image';
 
 const footerServices = [
@@ -106,9 +107,13 @@ const Footer = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h3 className="font-heading text-lg mb-6 text-accent">
+            <FoldInTitle
+              as="h3"
+              delay={0.04}
+              className="font-heading text-lg mb-6 text-accent"
+            >
               Quick Links
-            </h3>
+            </FoldInTitle>
             <ul className="space-y-3">
               {[
                 { label: 'Home', href: '/' },
@@ -136,9 +141,13 @@ const Footer = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h3 className="font-heading text-lg mb-6 text-accent">
+            <FoldInTitle
+              as="h3"
+              delay={0.04}
+              className="font-heading text-lg mb-6 text-accent"
+            >
               Services
-            </h3>
+            </FoldInTitle>
             <ul className="space-y-3">
               {footerServices.map((service) => (
                 <li key={service.id}>
@@ -161,9 +170,13 @@ const Footer = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h3 className="font-heading text-lg mb-6 text-accent">
+            <FoldInTitle
+              as="h3"
+              delay={0.04}
+              className="font-heading text-lg mb-6 text-accent"
+            >
               Contact Us
-            </h3>
+            </FoldInTitle>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <MapPin

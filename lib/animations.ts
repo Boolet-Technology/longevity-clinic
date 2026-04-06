@@ -142,3 +142,22 @@ export const rollIn: Variants = {
         transition: { duration: 0.8, ease: "easeOut" }
     }
 };
+
+/** 3D unfold from bottom edge; pair with a parent perspective wrapper (see FoldInTitle). */
+export const foldInTitle = (delay = 0, duration = 0.85): Variants => ({
+    hidden: {
+        opacity: 0,
+        rotateX: -72,
+        y: 14,
+    },
+    visible: {
+        opacity: 1,
+        rotateX: 0,
+        y: 0,
+        transition: {
+            duration,
+            delay,
+            ease: [0.17, 0.84, 0.44, 1],
+        },
+    },
+});

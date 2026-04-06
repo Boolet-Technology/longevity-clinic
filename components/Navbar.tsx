@@ -15,6 +15,7 @@ import {
 } from '@/lib/animations';
 import Image from 'next/image';
 import { scrollToTop } from '@/lib/lenis-instance';
+import { FoldInTitle } from '@/components/AnimatedSection';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -80,15 +81,15 @@ const Navbar = () => {
               className="size-16 object-contain mr-4"
             />
           </motion.div>
-          <motion.div
-            variants={fadeInLeft(0, 0.6, -20)}
-            initial="hidden"
-            animate="visible"
+          <FoldInTitle
+            as="h1"
+            trigger="mount"
+            delay={0.08}
+            duration={0.65}
+            className="font-heading text-xl md:text-2xl text-primary-foreground"
           >
-            <h1 className="font-heading text-xl md:text-2xl text-primary-foreground">
-              UK <span className="text-accent">Longevity</span> Clinic
-            </h1>
-          </motion.div>
+            UK <span className="text-accent">Longevity</span> Clinic
+          </FoldInTitle>
         </Link>
 
         {/* Desktop Navigation */}

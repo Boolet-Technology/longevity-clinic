@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { ArrowRight, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { fadeInUp, imageScale } from '@/lib/animations';
+import { FoldInTitle } from '@/components/AnimatedSection';
 import Image from 'next/image';
 
 const CTASection = () => {
@@ -53,17 +54,15 @@ const CTASection = () => {
             </span>
           </motion.div>
 
-          <motion.h2
-            variants={fadeInUp(0.1)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+          <FoldInTitle
+            as="h2"
+            delay={0.08}
             className="font-heading text-3xl md:text-5xl lg:text-6xl text-primary-foreground mt-4 mb-6 leading-tight"
           >
             Ready to Transform
             <br />
             <span className="text-accent italic">Your Future?</span>
-          </motion.h2>
+          </FoldInTitle>
 
           <motion.div
             variants={fadeInUp(0.5)}

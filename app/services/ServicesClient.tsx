@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {
   FadeInUp,
+  FoldInTitle,
   StaggerContainer,
   StaggerItem,
 } from '@/components/AnimatedSection';
@@ -209,20 +210,29 @@ const ServicesClient = () => {
         </div>
 
         <div className="container mx-auto px-4 md:px-8 relative z-10">
-          <FadeInUp className="max-w-3xl mx-auto text-center">
-            <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
-              Our Services
-            </span>
-            <h1 className="font-heading text-4xl md:text-6xl text-primary-foreground mt-4 mb-6 leading-tight">
+          <div className="max-w-3xl mx-auto text-center">
+            <FadeInUp>
+              <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
+                Our Services
+              </span>
+            </FadeInUp>
+            <FoldInTitle
+              as="h1"
+              trigger="mount"
+              delay={0.06}
+              className="font-heading text-4xl md:text-6xl text-primary-foreground mt-4 mb-6 leading-tight"
+            >
               World-Class{' '}
               <span className="text-accent italic">
                 Longevity Care
               </span>
-            </h1>
-            <p className="text-primary-foreground/70 text-lg font-body leading-relaxed">
-              We offer advanced health assessments, personalised wellness programmes, and evidence-informed therapies designed to support metabolic health, immune resilience, and long-term wellbeing.
-            </p>
-          </FadeInUp>
+            </FoldInTitle>
+            <FadeInUp>
+              <p className="text-primary-foreground/70 text-lg font-body leading-relaxed">
+                We offer advanced health assessments, personalised wellness programmes, and evidence-informed therapies designed to support metabolic health, immune resilience, and long-term wellbeing.
+              </p>
+            </FadeInUp>
+          </div>
         </div>
       </section>
 
@@ -230,9 +240,13 @@ const ServicesClient = () => {
       <section className="section-padding bg-muted">
         <div className="container mx-auto max-w-3xl">
           <FadeInUp className="space-y-6">
-            <h2 className="font-heading text-xl md:text-2xl text-foreground">
+            <FoldInTitle
+              as="h2"
+              delay={0.04}
+              className="font-heading text-xl md:text-2xl text-foreground"
+            >
               Important information
-            </h2>
+            </FoldInTitle>
             <p className="text-muted-foreground font-body leading-relaxed">
               All IV nutritional therapies and wellness interventions are delivered following appropriate clinical screening and are intended to support general wellbeing. Individual responses may vary.
             </p>
@@ -280,12 +294,16 @@ const ServicesClient = () => {
                 <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
                   {category.eyebrow}
                 </span>
-                <h2 className="font-heading text-3xl md:text-4xl text-foreground mt-4 mb-6">
+                <FoldInTitle
+                  as="h2"
+                  delay={0.06}
+                  className="font-heading text-3xl md:text-4xl text-foreground mt-4 mb-6"
+                >
                   {category.title.split(' ')[0]}{' '}
                   <span className="text-accent italic">
                     {category.title.split(' ').slice(1).join(' ')}
                   </span>
-                </h2>
+                </FoldInTitle>
                 <div className="text-muted-foreground font-body leading-relaxed mb-6 space-y-4">
                   <p>{category.description}</p>
                   {category.bodyParagraphs?.map((para, i) => (
@@ -313,9 +331,13 @@ const ServicesClient = () => {
                     <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
                       <service.icon className="w-6 h-6 text-accent" />
                     </div>
-                    <h3 className="font-heading text-lg text-card-foreground mb-2">
+                    <FoldInTitle
+                      as="h3"
+                      delay={0.03}
+                      className="font-heading text-lg text-card-foreground mb-2"
+                    >
                       {service.name}
-                    </h3>
+                    </FoldInTitle>
                     <p className="text-muted-foreground text-sm font-body leading-relaxed">
                       {service.description}
                     </p>
@@ -330,16 +352,23 @@ const ServicesClient = () => {
       {/* CTA Section */}
       <section className="section-padding bg-primary">
         <div className="container mx-auto">
-          <FadeInUp className="max-w-3xl mx-auto text-center">
-            <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
-              Ready to Begin?
-            </span>
-            <h2 className="font-heading text-3xl md:text-5xl text-primary-foreground mt-4 mb-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <FadeInUp>
+              <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
+                Ready to Begin?
+              </span>
+            </FadeInUp>
+            <FoldInTitle
+              as="h2"
+              delay={0.06}
+              className="font-heading text-3xl md:text-5xl text-primary-foreground mt-4 mb-6 mx-auto max-w-3xl"
+            >
               Start Your Longevity{' '}
               <span className="text-accent italic">
                 Journey Today
               </span>
-            </h2>
+            </FoldInTitle>
+            <FadeInUp>
             <p className="text-primary-foreground/70 text-lg font-body leading-relaxed mb-8">
               Schedule a consultation with our specialists to create
               your personalized treatment plan.
@@ -356,7 +385,8 @@ const ServicesClient = () => {
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
-          </FadeInUp>
+            </FadeInUp>
+          </div>
         </div>
       </section>
     </>

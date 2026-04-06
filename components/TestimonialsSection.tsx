@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
-import { FadeInUp } from "@/components/AnimatedSection";
+import { FadeInUp, FoldInTitle } from "@/components/AnimatedSection";
 import { carouselFade } from "@/lib/animations";
 
 const testimonials = [
@@ -36,32 +36,86 @@ const testimonials = [
   },
 ];
 
+const AUTO_PLAY_MS = 6500;
+
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [autoplayKey, setAutoplayKey] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduceMotion(mq.matches);
+    const onChange = () => setReduceMotion(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  const [tabHidden, setTabHidden] = useState(false);
+
+  useEffect(() => {
+    const onVis = () => setTabHidden(document.hidden);
+    document.addEventListener("visibilitychange", onVis);
+    return () => document.removeEventListener("visibilitychange", onVis);
+  }, []);
+
+  const restartAutoplay = useCallback(() => {
+    setAutoplayKey((k) => k + 1);
+  }, []);
+
+  const autoplayPaused = isPaused || tabHidden;
+
+  useEffect(() => {
+    if (reduceMotion || autoplayPaused) return;
+    const id = window.setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, AUTO_PLAY_MS);
+    return () => window.clearInterval(id);
+  }, [autoplayKey, reduceMotion, autoplayPaused]);
 
   const next = () => {
+    restartAutoplay();
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
 
   const prev = () => {
+    restartAutoplay();
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const goTo = (index: number) => {
+    restartAutoplay();
+    setCurrentIndex(index);
   };
 
   return (
     <section className="section-padding bg-background overflow-hidden">
       <div className="container mx-auto">
-        <FadeInUp className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
-            Testimonials
-          </span>
-          <h2 className="font-heading text-3xl md:text-5xl text-foreground mt-4 mb-6">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <FadeInUp>
+            <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
+              Testimonials
+            </span>
+          </FadeInUp>
+          <FoldInTitle
+            as="h2"
+            delay={0.06}
+            className="font-heading text-3xl md:text-5xl text-foreground mt-4 mb-6 mx-auto max-w-2xl"
+          >
             Trusted by{" "}
             <span className="text-accent italic">Distinguished Clients</span>
-          </h2>
-          <div className="divider-gold" />
-        </FadeInUp>
+          </FoldInTitle>
+          <FadeInUp>
+            <div className="divider-gold" />
+          </FadeInUp>
+        </div>
 
-        <div className="relative max-w-4xl mx-auto">
+        <div
+          className="relative max-w-4xl mx-auto"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           {/* Quote Icon */}
           <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 bg-accent rounded-full flex items-center justify-center z-10">
             <Quote className="w-8 h-8 text-accent-foreground" />
@@ -88,9 +142,16 @@ const TestimonialsSection = () => {
                     alt={testimonials[currentIndex].name}
                     className="w-20 h-20 rounded-full object-cover mb-4 border-2 border-accent"
                   />
-                  <h4 className="font-heading text-xl text-card-foreground">
+                  <FoldInTitle
+                    key={testimonials[currentIndex].id}
+                    as="h4"
+                    trigger="mount"
+                    delay={0.12}
+                    duration={0.55}
+                    className="font-heading text-xl text-card-foreground"
+                  >
                     {testimonials[currentIndex].name}
-                  </h4>
+                  </FoldInTitle>
                   <p className="text-muted-foreground text-sm font-body">
                     {testimonials[currentIndex].title} • {testimonials[currentIndex].location}
                   </p>
@@ -126,7 +187,7 @@ const TestimonialsSection = () => {
               {testimonials.map((_, index) => (
                 <button
                   key={index}
-                  onClick={() => setCurrentIndex(index)}
+                  onClick={() => goTo(index)}
                   className={`w-3 h-3 rounded-full transition-all ${
                     index === currentIndex ? "bg-accent w-8" : "bg-border"
                   }`}

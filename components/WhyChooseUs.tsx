@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import {
   FadeInLeft,
   FadeInRight,
+  FoldInTitle,
 } from '@/components/AnimatedSection';
 import { Check } from 'lucide-react';
 import { scaleIn, fadeInRight, fadeInLeft } from '@/lib/animations';
@@ -62,13 +63,17 @@ const WhyChooseUs = () => {
             <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
               Why Choose Us
             </span>
-            <h2 className="font-heading text-3xl md:text-5xl text-primary-foreground mt-4 mb-6 leading-tight">
+            <FoldInTitle
+              as="h2"
+              delay={0.06}
+              className="font-heading text-3xl md:text-5xl text-primary-foreground mt-4 mb-6 leading-tight"
+            >
               A Legacy of
               <br />
               <span className="text-accent italic">
                 Medical Excellence
               </span>
-            </h2>
+            </FoldInTitle>
             <p className="text-primary-foreground/70 font-body leading-relaxed mb-8">
               At UK Longevity Clinic, we combine decades of medical
               expertise with cutting-edge technology to deliver

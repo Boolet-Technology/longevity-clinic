@@ -6,6 +6,7 @@ import {
   FadeInUp,
   FadeInLeft,
   FadeInRight,
+  FoldInTitle,
   StaggerContainer,
   StaggerItem,
 } from '@/components/AnimatedSection';
@@ -59,7 +60,7 @@ const team = [
     name: 'Dr Jawahar Mohammad',
     specialty: 'Integrative Medicine • Metabolic Health • Preventative Care',
     image:
-      "/assets/Dr.-Jawahir.jpg",
+      "/assets/Dr-Jawahir.jpeg",
     bio: "Dr Jawahar Mohammad is an experienced clinician focused on integrative and preventative approaches to metabolic and whole-system health. His work centres on identifying root drivers of imbalance and supporting patients through evidence-informed, personalised care strategies. Within the UK Longevity Clinic alliance, Dr Mohammad contributes clinical insight that bridges traditional medicine with emerging longevity science, supporting programmes designed to enhance resilience, vitality, and long-term wellbeing.",
   },
 ];
@@ -89,7 +90,7 @@ const AboutClient = () => {
   const [expandedBio, setExpandedBio] = useState<string | null>(null);
 
   return (
-    <>
+    <div className="min-w-0 overflow-x-clip">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-primary overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -98,14 +99,22 @@ const AboutClient = () => {
         </div>
 
         <div className="container mx-auto px-4 md:px-8 relative z-10">
-          <FadeInUp className="max-w-3xl mx-auto text-center">
-            <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
-              About Us
-            </span>
-            <h1 className="font-heading text-4xl md:text-6xl text-primary-foreground mt-4 mb-6 leading-tight">
+          <div className="max-w-3xl mx-auto text-center">
+            <FadeInUp>
+              <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
+                About Us
+              </span>
+            </FadeInUp>
+            <FoldInTitle
+              as="h1"
+              trigger="mount"
+              delay={0.06}
+              className="font-heading text-4xl md:text-6xl text-primary-foreground mt-4 mb-6 leading-tight"
+            >
               Pioneering the Future of{' '}
               <span className="text-accent italic">Longevity</span>
-            </h1>
+            </FoldInTitle>
+            <FadeInUp>
             <p className="text-primary-foreground/50 md:text-2xl text-xl font-body leading-relaxed mb-4">
               We are entering a new chapter in personalised healthcare.
             </p>
@@ -113,34 +122,42 @@ const AboutClient = () => {
               Across the world, longevity is shifting towards proactive, science-led care - and we are bringing that approach to you,
               focusing on prevention, early insight, and personalised medicine to help you live with greater vitality, clarity, and longevity.
             </p>
-          </FadeInUp>
+            </FadeInUp>
+          </div>
         </div>
       </section>
 
       {/* Story Section */}
-      <section className="section-padding bg-background">
-        <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <FadeInLeft>
-              <div className="relative">
+      <section className="section-padding bg-background overflow-x-clip">
+        <div className="container mx-auto min-w-0">
+          <div className="grid min-w-0 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <FadeInLeft className="min-w-0">
+              <div className="relative max-w-full">
                 <img
-                  src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2068&auto=format&fit=crop"
+                  src="/assets/Medic Care Direct.jpeg"
                   alt="UK Longevity Clinic"
-                  className="rounded-lg shadow-elegant w-full"
+                  className="rounded-lg shadow-elegant w-full max-w-full"
                 />
-                <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-accent/30 rounded-lg -z-10" />
+                <div
+                  className="pointer-events-none absolute -z-10 w-full h-full rounded-lg border-2 border-accent/30 max-md:-bottom-2 max-md:-right-2 md:-bottom-6 md:-right-6"
+                  aria-hidden
+                />
               </div>
             </FadeInLeft>
 
-            <FadeInRight>
+            <FadeInRight className="min-w-0">
               <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
                 Our Story
               </span>
-              <h2 className="font-heading text-3xl md:text-4xl text-foreground mt-4 mb-6">
+              <FoldInTitle
+                as="h2"
+                delay={0.06}
+                className="font-heading text-3xl md:text-4xl text-foreground mt-4 mb-6"
+              >
                 A Commitment to
                 <br />
                 <span className="text-accent italic">Excellence</span>
-              </h2>
+              </FoldInTitle>
               <div className="space-y-4 text-muted-foreground font-body leading-relaxed">
                 <p>
                   With a combined legacy of over four decades in
@@ -192,18 +209,26 @@ const AboutClient = () => {
       </section>
 
       {/* Values Section */}
-      <section className="section-padding bg-muted">
-        <div className="container mx-auto">
-          <FadeInUp className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
-              Our Values
-            </span>
-            <h2 className="font-heading text-3xl md:text-5xl text-foreground mt-4 mb-6">
+      <section className="section-padding bg-muted overflow-x-clip">
+        <div className="container mx-auto min-w-0">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <FadeInUp>
+              <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
+                Our Values
+              </span>
+            </FadeInUp>
+            <FoldInTitle
+              as="h2"
+              delay={0.06}
+              className="font-heading text-3xl md:text-5xl text-foreground mt-4 mb-6 mx-auto max-w-2xl"
+            >
               Guided by{' '}
               <span className="text-accent italic">Principles</span>
-            </h2>
-            <div className="divider-gold" />
-          </FadeInUp>
+            </FoldInTitle>
+            <FadeInUp>
+              <div className="divider-gold" />
+            </FadeInUp>
+          </div>
 
           <StaggerContainer className="grid md:grid-cols-3 gap-8">
             {values.map((value) => (
@@ -215,9 +240,13 @@ const AboutClient = () => {
                   <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-6">
                     <value.icon className="w-8 h-8 text-accent" />
                   </div>
-                  <h3 className="font-heading text-xl text-card-foreground mb-3">
+                  <FoldInTitle
+                    as="h3"
+                    delay={0.04}
+                    className="font-heading text-xl text-card-foreground mb-3"
+                  >
                     {value.title}
-                  </h3>
+                  </FoldInTitle>
                   <p className="text-muted-foreground text-sm font-body leading-relaxed">
                     {value.description}
                   </p>
@@ -229,43 +258,55 @@ const AboutClient = () => {
       </section>
 
       {/* Team Section */}
-      <section className="section-padding bg-background">
-        <div className="container mx-auto">
-          <FadeInUp className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
-              Our Team
-            </span>
-            <h2 className="font-heading text-3xl md:text-5xl text-foreground mt-4 mb-6">
+      <section className="section-padding bg-background overflow-x-clip">
+        <div className="container mx-auto min-w-0">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <FadeInUp>
+              <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
+                Our Team
+              </span>
+            </FadeInUp>
+            <FoldInTitle
+              as="h2"
+              delay={0.06}
+              className="font-heading text-3xl md:text-5xl text-foreground mt-4 mb-6 mx-auto max-w-2xl"
+            >
               Meet Our{' '}
               <span className="text-accent italic">Specialists</span>
-            </h2>
-            <div className="divider-gold mb-6" />
-            <p className="text-muted-foreground font-body">
-              Our team of world-renowned physicians brings decades of
-              combined experience in longevity medicine.
-            </p>
-          </FadeInUp>
+            </FoldInTitle>
+            <FadeInUp>
+              <div className="divider-gold mb-6" />
+              <p className="text-muted-foreground font-body">
+                Our team of world-renowned physicians brings decades of
+                combined experience in longevity medicine.
+              </p>
+            </FadeInUp>
+          </div>
 
-          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <StaggerContainer className="grid min-w-0 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member) => (
               <StaggerItem key={member.name}>
                 <motion.div
                   whileHover={{ y: -10 }}
                   className="group bg-card rounded-lg overflow-hidden shadow-card"
                 >
-                  <div className="relative overflow-hidden rounded-t-lg">
+                  <div className="relative aspect-3/5 w-full overflow-hidden rounded-t-lg bg-muted sm:aspect-3/4">
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-52 sm:h-56 md:h-auto aspect-3/4 object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="absolute inset-0 h-full w-full object-cover object-[center_12%] group-hover:scale-110 motion-safe:transition-transform motion-safe:duration-700 sm:object-[center_20%] md:object-center"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <div className="p-4">
-                    <h3 className="font-heading text-lg text-foreground">
+                    <FoldInTitle
+                      as="h3"
+                      delay={0.03}
+                      className="font-heading text-lg text-foreground"
+                    >
                       {member.name}
-                    </h3>
-                    <p className="text-accent text-sm font-body mt-1">
+                    </FoldInTitle>
+                    <p className="text-accent text-sm font-body mt-1 wrap-break-word">
                       {member.specialty}
                     </p>
                     <AnimatePresence>
@@ -349,7 +390,7 @@ const AboutClient = () => {
           </div>
         </div>
       </section> */}
-    </>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FadeInUp } from '@/components/AnimatedSection';
+import { FadeInUp, FoldInTitle } from '@/components/AnimatedSection';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -127,9 +127,13 @@ const BookClient = () => {
             <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle className="w-10 h-10 text-accent-foreground" />
             </div>
-            <h1 className="font-heading text-3xl text-foreground mb-4">
+            <FoldInTitle
+              as="h1"
+              trigger="mount"
+              className="font-heading text-3xl text-foreground mb-4"
+            >
               Appointment Requested!
-            </h1>
+            </FoldInTitle>
             <p className="text-muted-foreground font-body mb-4">
               Thank you for choosing UK Longevity Clinic.
             </p>
@@ -172,19 +176,28 @@ const BookClient = () => {
         </div>
 
         <div className="container mx-auto px-4 md:px-8 relative z-10">
-          <FadeInUp className="max-w-3xl mx-auto text-center">
-            <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
-              Book Appointment
-            </span>
-            <h1 className="font-heading text-4xl md:text-6xl text-primary-foreground mt-4 mb-6 leading-tight">
+          <div className="max-w-3xl mx-auto text-center">
+            <FadeInUp>
+              <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
+                Book Appointment
+              </span>
+            </FadeInUp>
+            <FoldInTitle
+              as="h1"
+              trigger="mount"
+              delay={0.06}
+              className="font-heading text-4xl md:text-6xl text-primary-foreground mt-4 mb-6 leading-tight"
+            >
               Schedule Your{' '}
               <span className="text-accent italic">Consultation</span>
-            </h1>
-            <p className="text-primary-foreground/70 text-lg font-body leading-relaxed">
-              Take the first step towards optimal health and
-              longevity.
-            </p>
-          </FadeInUp>
+            </FoldInTitle>
+            <FadeInUp>
+              <p className="text-primary-foreground/70 text-lg font-body leading-relaxed">
+                Take the first step towards optimal health and
+                longevity.
+              </p>
+            </FadeInUp>
+          </div>
         </div>
       </section>
 
@@ -228,9 +241,14 @@ const BookClient = () => {
                   className="space-y-8"
                 >
                   <div className="text-center mb-8">
-                    <h2 className="font-heading text-2xl text-card-foreground mb-2">
+                    <FoldInTitle
+                      key="step1"
+                      as="h2"
+                      trigger="mount"
+                      className="font-heading text-2xl text-card-foreground mb-2"
+                    >
                       Select Service & Date
-                    </h2>
+                    </FoldInTitle>
                     <p className="text-muted-foreground font-body text-sm">
                       Choose the service you're interested in and your
                       preferred date
@@ -334,9 +352,14 @@ const BookClient = () => {
                   className="space-y-6"
                 >
                   <div className="text-center mb-8">
-                    <h2 className="font-heading text-2xl text-card-foreground mb-2">
+                    <FoldInTitle
+                      key="step2"
+                      as="h2"
+                      trigger="mount"
+                      className="font-heading text-2xl text-card-foreground mb-2"
+                    >
                       Personal Information
-                    </h2>
+                    </FoldInTitle>
                     <p className="text-muted-foreground font-body text-sm">
                       Tell us a bit about yourself
                     </p>
@@ -449,9 +472,14 @@ const BookClient = () => {
                   className="space-y-6"
                 >
                   <div className="text-center mb-8">
-                    <h2 className="font-heading text-2xl text-card-foreground mb-2">
+                    <FoldInTitle
+                      key="step3"
+                      as="h2"
+                      trigger="mount"
+                      className="font-heading text-2xl text-card-foreground mb-2"
+                    >
                       Additional Information
-                    </h2>
+                    </FoldInTitle>
                     <p className="text-muted-foreground font-body text-sm">
                       Any additional details you'd like us to know
                     </p>
@@ -460,9 +488,13 @@ const BookClient = () => {
                   {/* Appointment Summary */}
                   {date && time && (
                     <div className="bg-muted p-6 rounded-lg mb-6">
-                      <h3 className="font-heading text-lg text-foreground mb-4">
+                      <FoldInTitle
+                        as="h3"
+                        trigger="mount"
+                        className="font-heading text-lg text-foreground mb-4"
+                      >
                         Appointment Summary
-                      </h3>
+                      </FoldInTitle>
                       <div className="flex items-center space-x-4 text-muted-foreground font-body">
                         <CalendarIcon className="w-5 h-5 text-accent" />
                         <span>

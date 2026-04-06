@@ -5,12 +5,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import {
-  fadeInUp,
-  revealText,
-  staggerContainer,
-  imageScale,
-} from '@/lib/animations';
+import { fadeInUp, imageScale } from '@/lib/animations';
+import { FoldInTitle } from '@/components/AnimatedSection';
 import Image from 'next/image';
 import { stats } from '@/data/data';
 
@@ -65,31 +61,24 @@ const HeroSection = () => {
             </span>
           </motion.div>
 
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-            className="mb-6 overflow-hidden"
-          >
-            <div className="overflow-hidden">
-              <motion.h1
-                variants={revealText}
-                custom={0}
-                className="font-heading text-4xl md:text-6xl lg:text-7xl text-primary-foreground leading-tight"
-              >
-                The Future of
-              </motion.h1>
-            </div>
-            <div className="overflow-hidden">
-              <motion.h1
-                variants={revealText}
-                custom={1}
-                className="font-heading text-4xl md:text-6xl lg:text-7xl text-accent italic leading-tight"
-              >
-                Human Longevity
-              </motion.h1>
-            </div>
-          </motion.div>
+          <div className="mb-6 space-y-0">
+            <FoldInTitle
+              as="h1"
+              trigger="mount"
+              delay={0.05}
+              className="font-heading text-4xl md:text-6xl lg:text-7xl text-primary-foreground leading-tight"
+            >
+              The Future of
+            </FoldInTitle>
+            <FoldInTitle
+              as="h1"
+              trigger="mount"
+              delay={0.14}
+              className="font-heading text-4xl md:text-6xl lg:text-7xl text-accent italic leading-tight"
+            >
+              Human Longevity
+            </FoldInTitle>
+          </div>
 
           <span className="sr-only">
             Longevity clinic London offering IV therapy, anti-aging treatments, and health optimisation services
