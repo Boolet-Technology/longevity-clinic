@@ -57,11 +57,11 @@ const team = [
     bio: "Mumtaz (Taz) Khan MBE is an award-winning social entrepreneur and founder of London's Community Kitchen. Widely recognised for his leadership at the intersection of food systems, public health, and community innovation, he has dedicated his career to improving health outcomes at scale. At the UK Longevity Clinic, Taz brings the critical people-place-planet perspective — ensuring that advanced longevity science is delivered in ways that are accessible, community-rooted, and designed for meaningful real-world impact.",
   },
   {
-    name: 'Dr Jawahar Mohammad',
+    name: 'Dr. Jawahir Marikkar',
     specialty: 'Integrative Medicine • Metabolic Health • Preventative Care',
     image:
       "/assets/Dr-Jawahir.jpeg",
-    bio: "Dr Jawahar Mohammad is an experienced clinician focused on integrative and preventative approaches to metabolic and whole-system health. His work centres on identifying root drivers of imbalance and supporting patients through evidence-informed, personalised care strategies. Within the UK Longevity Clinic alliance, Dr Mohammad contributes clinical insight that bridges traditional medicine with emerging longevity science, supporting programmes designed to enhance resilience, vitality, and long-term wellbeing.",
+    bio: "Dr. Jawahir Marikkar is an experienced clinician focused on integrative and preventative approaches to metabolic and whole-system health. His work centres on identifying root drivers of imbalance and supporting patients through evidence-informed, personalised care strategies. Within the UK Longevity Clinic alliance, Dr. Jawahir Marikkar contributes clinical insight that bridges traditional medicine with emerging longevity science, supporting programmes designed to enhance resilience, vitality, and long-term wellbeing.",
   },
 ];
 
