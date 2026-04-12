@@ -134,7 +134,7 @@ const AboutClient = () => {
             <FadeInLeft className="min-w-0">
               <div className="relative max-w-full">
                 <img
-                  src="/assets/Medic Care Direct.jpeg"
+                  src="/assets/Medic-Care-Direct.jpeg"
                   alt="UK Longevity Clinic"
                   className="rounded-lg shadow-elegant w-full max-w-full"
                 />
