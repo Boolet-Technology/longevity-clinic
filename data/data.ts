@@ -1,4 +1,50 @@
-import { Heart, Leaf, Dna, Brain } from "lucide-react";
+import { Heart, Leaf, Dna, Brain, Package, ClipboardCheck, TrendingUp } from "lucide-react";
+
+export const WAITLIST_URL = 'https://main.dvu8gyymy0qox.amplifyapp.com/#join';
+
+export const appJourneySteps = [
+    {
+        step: 1,
+        title: 'Measure',
+        description: '80+ blood biomarkers and your gut microbiome, from a simple at-home kit.',
+    },
+    {
+        step: 2,
+        title: 'Understand',
+        description: 'A doctor reviews every result and walks you through what it means for you.',
+    },
+    {
+        step: 3,
+        title: 'Optimise',
+        description: 'A personalised, clinician-approved plan - diet, movement, supplements.',
+    },
+    {
+        step: 4,
+        title: 'Thrive',
+        description: 'Retest each quarter and watch the trends move in the right direction.',
+    },
+] as const;
+
+export const appFeatures = [
+    {
+        icon: Package,
+        title: 'Track your kit, live',
+        description:
+            'Follow every stage from registration to the lab, with delivery estimates.',
+    },
+    {
+        icon: ClipboardCheck,
+        title: 'Clinician-reviewed results',
+        description:
+            'Nothing reaches you until a doctor has signed it off - values always in context.',
+    },
+    {
+        icon: TrendingUp,
+        title: 'Your plan & trends',
+        description:
+            'A personalised plan to act on, and quarterly trends that show your progress.',
+    },
+] as const;
 
 export const stats = [
     { value: '5000+', label: 'Clients Treated' },

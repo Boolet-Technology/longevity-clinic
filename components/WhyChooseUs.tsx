@@ -21,7 +21,7 @@ const features = [
 const WhyChooseUs = () => {
   return (
     <section className="section-padding bg-primary overflow-hidden">
-      <div className="container mx-auto">
+      <div className="page-container">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image Column */}
           <FadeInLeft className="relative">

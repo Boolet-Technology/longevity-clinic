@@ -59,7 +59,7 @@ export async function POST(request: Request) {
     });
 
     const text = [
-      `New contact form submission — UK Longevity Clinic website`,
+      `New contact form submission - UK Longevity Clinic website`,
       ``,
       `Name: ${fullName}`,
       `Age: ${age}`,

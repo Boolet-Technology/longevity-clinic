@@ -68,7 +68,7 @@ const ServicesSection = () => {
   if (reduceMotion) {
     return (
       <section className="section-padding bg-background">
-        <div className="container mx-auto px-4 md:px-8">
+        <div className="page-container">
           <FadeInUp className="text-center max-w-2xl mx-auto mb-8 md:mb-10">
             <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
               Our Expertise
@@ -122,7 +122,7 @@ const ServicesSection = () => {
 
 function ExpertiseHeader() {
   return (
-    <div className="container mx-auto shrink-0 px-4 pb-2 pt-0 text-center md:px-8 md:pb-3 xl:pt-20">
+    <div className="page-container shrink-0 pb-2 pt-0 text-center md:pb-3 xl:pt-20">
       <span className="text-accent text-xs tracking-[0.3em] uppercase font-body md:text-sm">
         Our Expertise
       </span>
@@ -155,7 +155,7 @@ function HorizontalTrack({
     <motion.div
       ref={trackRef}
       style={{ x }}
-      className="flex w-max gap-4 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12 pl-4 md:pl-8 lg:pl-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))] will-change-transform"
+      className="page-container-inset flex w-max gap-4 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12 will-change-transform"
     >
       {services.map((service, i) => (
         <ServiceCardWide
@@ -203,7 +203,7 @@ function ServiceCardWide({
       <div className="relative order-1 min-h-[100px] flex-1 md:order-2 md:min-h-0">
         <Image
           src={service.image}
-          alt={`${service.title} — UK Longevity Clinic London`}
+          alt={`${service.title} - UK Longevity Clinic London`}
           fill
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
           sizes="(max-width: 768px) 88vw, (max-width: 1280px) 70vw, (max-width: 1536px) 800px, (max-width: 1920px) 900px, 1100px"
@@ -231,7 +231,7 @@ function ServiceCardStatic({
       <div className="relative h-52 shrink-0">
         <Image
           src={service.image}
-          alt={`${service.title} — UK Longevity Clinic London`}
+          alt={`${service.title} - UK Longevity Clinic London`}
           fill
           className="object-cover"
           sizes="(max-width: 640px) 100vw, 25vw"

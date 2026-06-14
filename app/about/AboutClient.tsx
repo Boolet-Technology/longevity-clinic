@@ -54,7 +54,7 @@ const team = [
     specialty: 'Social Impact • Community Health • Systems Innovation',
     image:
       '/assets/Taz-Khan.jpeg',
-    bio: "Mumtaz (Taz) Khan MBE is an award-winning social entrepreneur and founder of London's Community Kitchen. Widely recognised for his leadership at the intersection of food systems, public health, and community innovation, he has dedicated his career to improving health outcomes at scale. At the UK Longevity Clinic, Taz brings the critical people-place-planet perspective — ensuring that advanced longevity science is delivered in ways that are accessible, community-rooted, and designed for meaningful real-world impact.",
+    bio: "Mumtaz (Taz) Khan MBE is an award-winning social entrepreneur and founder of London's Community Kitchen. Widely recognised for his leadership at the intersection of food systems, public health, and community innovation, he has dedicated his career to improving health outcomes at scale. At the UK Longevity Clinic, Taz brings the critical people-place-planet perspective - ensuring that advanced longevity science is delivered in ways that are accessible, community-rooted, and designed for meaningful real-world impact.",
   },
   {
     name: 'Dr. Jawahir Marikkar',
@@ -98,7 +98,7 @@ const AboutClient = () => {
           <div className="absolute bottom-10 right-10 w-64 h-64 border border-accent rounded-full" />
         </div>
 
-        <div className="container mx-auto px-4 md:px-8 relative z-10">
+        <div className="page-container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <FadeInUp>
               <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
@@ -129,7 +129,7 @@ const AboutClient = () => {
 
       {/* Story Section */}
       <section className="section-padding bg-background overflow-x-clip">
-        <div className="container mx-auto min-w-0">
+        <div className="page-container min-w-0">
           <div className="grid min-w-0 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <FadeInLeft className="min-w-0">
               <div className="relative max-w-full">
@@ -169,20 +169,20 @@ const AboutClient = () => {
                 <p>
                   Now established in London, we are introducing a new
                   standard of personalised, science-led healthcare to
-                  the UK—one that moves beyond reactive medicine and
+                  the UK-one that moves beyond reactive medicine and
                   into precision-based longevity.
                 </p>
                 <p>
                   Our approach is rooted in clinical evidence,
                   data-driven diagnostics, and tailored interventions
                   designed to optimise health at every stage of life.
-                  This is not wellness as a trend—this is medicine
+                  This is not wellness as a trend-this is medicine
                   redefined.
                 </p>
                 <p>
                   At UK Longevity Clinic, we focus not simply on
                   extending lifespan, but on elevating
-                  healthspan—enhancing energy, resilience, and
+                  healthspan-enhancing energy, resilience, and
                   long-term vitality through deeply personalised care.
                 </p>
               </div>
@@ -210,7 +210,7 @@ const AboutClient = () => {
 
       {/* Values Section */}
       <section className="section-padding bg-muted overflow-x-clip">
-        <div className="container mx-auto min-w-0">
+        <div className="page-container min-w-0">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <FadeInUp>
               <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
@@ -259,7 +259,7 @@ const AboutClient = () => {
 
       {/* Team Section */}
       <section className="section-padding bg-background overflow-x-clip">
-        <div className="container mx-auto min-w-0">
+        <div className="page-container min-w-0">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <FadeInUp>
               <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">

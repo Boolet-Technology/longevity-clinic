@@ -91,7 +91,7 @@ const TestimonialsSection = () => {
 
   return (
     <section className="section-padding bg-background overflow-hidden">
-      <div className="container mx-auto">
+      <div className="page-container">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <FadeInUp>
             <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">

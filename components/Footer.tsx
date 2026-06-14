@@ -15,6 +15,7 @@ import { usePathname } from 'next/navigation';
 import { fadeInUp } from '@/lib/animations';
 import { FoldInTitle } from '@/components/AnimatedSection';
 import Image from 'next/image';
+import { WAITLIST_URL } from '@/data/data';
 
 const footerServices = [
   {
@@ -51,7 +52,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground border-t border-primary-foreground/10">
       {/* Main Footer */}
-      <div className="container mx-auto px-4 md:px-8 py-16 md:py-20">
+      <div className="page-container py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <motion.div
@@ -119,7 +120,6 @@ const Footer = () => {
                 { label: 'Home', href: '/' },
                 { label: 'About Us', href: '/about' },
                 { label: 'Our Services', href: '/services' },
-                // { label: 'Book Appointment', href: '/book' },
                 { label: 'Contact', href: '/contact' },
               ].map((link) => (
                 <li key={link.href}>
@@ -131,6 +131,16 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  href={WAITLIST_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-foreground/70 hover:text-accent transition-colors text-base font-body"
+                >
+                  Join Waitlist
+                </a>
+              </li>
             </ul>
           </motion.div>
 
@@ -237,7 +247,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-primary-foreground/10 text-sm">
-        <div className="container mx-auto px-4 md:px-8 py-6 flex flex-col md:flex-row items-center justify-between">
+        <div className="page-container py-6 flex flex-col md:flex-row items-center justify-between">
           <p className="text-primary-foreground/50  font-body text-center md:text-left">
             © {new Date().getFullYear()} UK Longevity Clinic. All
             rights reserved.

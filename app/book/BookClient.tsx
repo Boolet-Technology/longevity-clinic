@@ -175,7 +175,7 @@ const BookClient = () => {
           <div className="absolute top-20 right-1/4 w-96 h-96 border border-accent rounded-full" />
         </div>
 
-        <div className="container mx-auto px-4 md:px-8 relative z-10">
+        <div className="page-container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <FadeInUp>
               <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
@@ -203,7 +203,7 @@ const BookClient = () => {
 
       {/* Booking Form Section */}
       <section className="section-padding bg-background">
-        <div className="container mx-auto max-w-3xl">
+        <div className="page-container max-w-3xl">
           {/* Progress Steps */}
           <div className="flex items-center justify-center mb-12">
             {[1, 2, 3].map((s) => (

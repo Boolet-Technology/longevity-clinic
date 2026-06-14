@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { fadeInUp, imageScale } from '@/lib/animations';
 import { FoldInTitle } from '@/components/AnimatedSection';
 import Image from 'next/image';
-import { stats } from '@/data/data';
+import { stats, WAITLIST_URL } from '@/data/data';
 
 const HeroSection = () => {
   const containerRef = useRef(null);
@@ -49,7 +49,7 @@ const HeroSection = () => {
 
       <div className="absolute bottom-1/4 left-10 w-32 h-32 border border-accent/10 rounded-full animate-float hidden lg:block" />
 
-      <div className="container mx-auto px-4 md:px-8 relative z-10 pt-32 flex-1 flex flex-col justify-center">
+      <div className="page-container relative z-10 pt-32 flex-1 flex flex-col justify-center">
         <div className="max-w-4xl">
           <motion.div
             variants={fadeInUp(0.2, 0.8)}
@@ -99,12 +99,17 @@ const HeroSection = () => {
             animate="visible"
             className="flex flex-col sm:flex-row gap-4"
           >
-            {/* <Button asChild className="btn-luxury group">
-              <Link href="/book" className="h-auto">
-                Book Consultation
+            <Button asChild className="btn-luxury group">
+              <a
+                href={WAITLIST_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-auto"
+              >
+                Join Waitlist
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button> */}
+              </a>
+            </Button>
 
             <Button
               asChild
@@ -126,7 +131,7 @@ const HeroSection = () => {
         animate="visible"
         className="relative bottom-0 left-0 right-0 bg-linear-to-t from-primary to-transparent"
       >
-        <div className="container mx-auto px-4 md:px-8 py-8">
+        <div className="page-container py-8">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-primary-foreground/10 pt-8 max-md:bg-primary/95 max-md:backdrop-blur-sm max-md:rounded-t-2xl max-md:border-t-0 max-md:pb-12 max-md:gap-y-6">
             {stats.map((stat, index) => (
               <motion.div

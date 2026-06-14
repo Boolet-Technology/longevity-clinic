@@ -37,9 +37,9 @@ const serviceCategories = [
     description:
       'Understand your biology. Redefine your future. Move beyond surface-level health.',
     bodyParagraphs: [
-      'Our Epigenetics Testing service provides a deep, real-time understanding of how your lifestyle, environment, and behaviours are influencing your genes — allowing us to design truly personalised longevity strategies.',
+      'Our Epigenetics Testing service provides a deep, real-time understanding of how your lifestyle, environment, and behaviours are influencing your genes - allowing us to design truly personalised longevity strategies.',
       'This is where science meets precision living.',
-      'Unlike traditional health checks, this is not about reacting to illness — it’s about staying ahead of it.',
+      'Unlike traditional health checks, this is not about reacting to illness - it’s about staying ahead of it.',
       'Best suited for: Individuals seeking clarity, performance optimisation, and long-term health control.',
     ],
     image:
@@ -209,7 +209,7 @@ const ServicesClient = () => {
           <div className="absolute bottom-10 left-10 w-64 h-64 border border-accent rounded-full" />
         </div>
 
-        <div className="container mx-auto px-4 md:px-8 relative z-10">
+        <div className="page-container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <FadeInUp>
               <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
@@ -238,7 +238,7 @@ const ServicesClient = () => {
 
       {/* Regulatory / Important information */}
       <section className="section-padding bg-muted">
-        <div className="container mx-auto max-w-3xl">
+        <div className="page-container max-w-3xl">
           <FadeInUp className="space-y-6">
             <FoldInTitle
               as="h2"
@@ -264,7 +264,7 @@ const ServicesClient = () => {
           id={category.id}
           className={`section-padding scroll-mt-28 md:scroll-mt-32 ${categoryIndex % 2 === 0 ? 'bg-background' : 'bg-muted'}`}
         >
-          <div className="container mx-auto">
+          <div className="page-container">
             {/* Category Header */}
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-16">
               <FadeInUp
@@ -351,7 +351,7 @@ const ServicesClient = () => {
 
       {/* CTA Section */}
       <section className="section-padding bg-primary">
-        <div className="container mx-auto">
+        <div className="page-container">
           <div className="max-w-3xl mx-auto text-center">
             <FadeInUp>
               <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">

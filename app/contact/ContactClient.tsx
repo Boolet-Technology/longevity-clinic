@@ -147,7 +147,7 @@ const ContactClient = () => {
           <div className="absolute top-20 left-1/4 w-96 h-96 border border-accent rounded-full" />
         </div>
 
-        <div className="container mx-auto px-4 md:px-8 relative z-10">
+        <div className="page-container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <FadeInUp>
               <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">
@@ -173,7 +173,7 @@ const ContactClient = () => {
       </section>
 
       <section className="section-padding bg-background">
-        <div className="container mx-auto">
+        <div className="page-container">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             <FadeInLeft>
               <span className="text-accent text-sm tracking-[0.3em] uppercase font-body">

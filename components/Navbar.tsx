@@ -16,6 +16,7 @@ import {
 import Image from 'next/image';
 import { scrollToTop } from '@/lib/lenis-instance';
 import { FoldInTitle } from '@/components/AnimatedSection';
+import { WAITLIST_URL } from '@/data/data';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -61,12 +62,12 @@ const Navbar = () => {
           : 'bg-transparent py-6'
       }`}
     >
-      <nav className="container mx-auto flex items-center justify-between mb-4 md:mb-0">
+      <nav className="page-container flex items-center justify-between mb-4 md:mb-0">
         {/* Logo */}
         <Link
           href="/"
           onClick={handleHomeOrScrollTop}
-          className="flex items-center space-x-2 ml-4"
+          className="flex items-center space-x-2"
         >
           <motion.div
             variants={fadeInLeft(0, 0.6, -20)}
@@ -136,15 +137,21 @@ const Navbar = () => {
             <span className="text-sm font-body">020 3773 0111</span>
           </motion.a>
 
-          {/* <motion.div
+          <motion.div
             variants={fadeInRight(0.4, 0.6, 20)}
             initial="hidden"
             animate="visible"
           >
             <Button asChild className="btn-luxury">
-              <Link href="/book">Book Appointment</Link>
+              <a
+                href={WAITLIST_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Join Waitlist
+              </a>
             </Button>
-          </motion.div> */}
+          </motion.div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -167,7 +174,7 @@ const Navbar = () => {
             exit="exit"
             className="lg:hidden bg-primary/98 backdrop-blur-md border-t border-primary-foreground/10"
           >
-            <div className="container mx-auto px-4 py-6 space-y-4">
+            <div className="page-container py-6 space-y-4">
               {navLinks.map((link, index) => (
                 <motion.div
                   key={link.href}
@@ -197,9 +204,15 @@ const Navbar = () => {
                 animate="visible"
                 className="pt-4"
               >
-                {/* <Button asChild className="btn-luxury w-full">
-                  <Link href="/book">Book Appointment</Link>
-                </Button> */}
+                <Button asChild className="btn-luxury w-full">
+                  <a
+                    href={WAITLIST_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Join Waitlist
+                  </a>
+                </Button>
               </motion.div>
             </div>
           </motion.div>
