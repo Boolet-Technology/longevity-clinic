@@ -30,7 +30,7 @@ const AppSection = () => {
           <div className="divider-gold mb-5" />
           <p className="text-muted-foreground font-body leading-relaxed">
             A doctor-led, at-home longevity assessment. Measure what matters,
-            understand it with a clinician, and act on a plan built around you —
+            understand it with a clinician, and act on a plan built around you -
             all through the companion app for iOS &amp; Android, included with
             every kit.
           </p>
@@ -85,7 +85,7 @@ const AppSection = () => {
               Measure · Understand · Optimise · Thrive
             </FoldInTitle>
             <p className="text-muted-foreground font-body leading-relaxed">
-              Everything needed for a complete at-home assessment — posted to
+              Everything needed for a complete at-home assessment - posted to
               your door, returned freepost, and read by a clinician before
               anything reaches you.
             </p>
